@@ -1,0 +1,317 @@
+<template>
+  <section>
+    <DtcXlNavBar v-if="normalNavBar"></DtcXlNavBar>
+    <DtcXlNavWhiteBar v-if="!normalNavBar"></DtcXlNavWhiteBar>
+    <div class="banner-img">
+      <img src="home_image/main_view.png" />
+      <main class="banner-title" v-b-visible="visibleHandler">DATACOM TECHNOLOGY CORP.</main>
+    </div>
+    <section class="dna">
+      <img src="home_image/dna.svg" />
+      <main style="margin-left:190px;">
+        <h5>SERVICE ITEMS</h5>
+        <nav class="dna-nav">
+          <h6 @click="tab = 1" :style="tab == 1 ? 'color:#5D5D5D' : 'color:#8B8B8B;'">醫療資訊系統解決方案</h6>
+          <h6 @click="tab = 2" :style="tab == 2 ? 'color:#5D5D5D' : 'color:#8B8B8B;'">資訊設備系統解決方案</h6>
+        </nav>
+        <section class="dna-content" v-if="tab == 1">
+          <div>
+            <p>HIS-醫院資訊系統</p>
+            <p>PACS-影像醫學傳輸系統</p>
+            <p>SRRS-手術記錄報告系統</p>
+            <p>EMR-電子病例管理系統</p>
+            <p>PES-病理檢驗系統</p>
+            <p>LIS-檢驗資訊系統</p>
+            <p>CTPS-癌症管理系統</p>
+          </div>
+          <div>
+            <p>HAS-醫院評鑑系統</p>
+            <p>POC-床邊照護系統</p>
+            <p>MRIS-病歷掃描倉儲系統</p>
+            <p>ADS-血液淨化管理系統</p>
+            <p>IHE-區域醫療平台</p>
+            <p>PHR-基層醫療管理</p>
+            <p>RIS-放射資訊系統</p>
+          </div>
+          <div></div>
+        </section>
+
+        <section class="dna-content dna-tab2" v-if="tab == 2">
+          <div>
+            <main>
+              <p>專業的團隊與豐富的建置及維護經驗,幫您把關系統每一個環節建置穩定的系統,以下為本公司所提供的系統建置與維護項目：</p>
+              <p>資訊安全系統建置與維護 數位監控系統建置與維護 資訊設備軟體硬體採購</p>
+            </main>
+          </div>
+          <div></div>
+        </section>
+        <footer class="dna-nav-footer">
+          <nav>
+            <div :style="tab == 1 ? 'background:#007AD0':'background:#D0D0D0'" @click="tab = 1"></div>
+            <div :style="tab == 2 ? 'background:#007AD0':'background:#D0D0D0'" @click="tab = 2"></div>
+          </nav>
+        </footer>
+      </main>
+    </section>
+    <main class="dtc-clip-path">
+      <News></News>
+      <About style="margin-top:5.5rem;"></About>
+      <Contact style="margin-top:5.5rem;"></Contact>
+      <footer>
+        <main>
+          <h5>DATACOM TECH.</h5>
+          <nav>
+            <h6>隱私權政策</h6>
+            <div></div>
+            <h6>網站安全政策</h6>
+            <div></div>
+            <h6>使用者條款</h6>
+          </nav>
+          <div>Copyright©2020 DATACOM. All rights reserved.</div>
+        </main>
+      </footer>
+    </main>
+  </section>
+</template>
+
+<script>
+//焦點訊息
+import DtcXlNavBar from '@/components/DtcXlNavBar.vue';
+import News from '@/components/News.vue';
+import About from '@/components/About.vue';
+import Contact from '@/components/ContactDtc.vue';
+import DtcXlNavWhiteBar from '@/components/DtcXlNavWhiteBar.vue';
+const names = ['醫療資訊系統解決方案', '資訊設備系統解決方案'];
+export default {
+	data() {
+		return {
+			names,
+			tab: 1,
+			normalNavBar: true,
+		};
+	},
+	components: {
+		DtcXlNavBar,
+		DtcXlNavWhiteBar,
+		News,
+		About,
+		Contact
+	},
+	methods:{
+		visibleHandler(visible){
+			this.normalNavBar = visible;
+		}
+	}
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+.banner-img {
+  display: block;
+  position: relative;
+  img {
+    height: 900px;
+    object-fit: cover;
+    width: 100vw;
+  }
+}
+.banner-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  transform: translate(-65%, -70%);
+  font-size: 54px;
+  height: 65px;
+  line-height: 65px;
+  width: 842px;
+  color: white;
+}
+.banner-title {
+  margin-top: -65px;
+  &::after {
+    position: absolute;
+    top: 100%;
+    content: "專業團隊完整的產品線以及豐富醫療產業設備與系統建置經驗，更擁有醫學中心醫療系統開發建置經驗";
+    width: 756px;
+    font-size: 16px;
+    display: block;
+    margin-top: -20px;
+  }
+  &::before {
+    position: absolute;
+    top: 100%;
+    content: "可提供客戶顧問級的服務以及不同規模醫療院所適合整體醫療解決方案";
+    width: 756px;
+    font-size: 16px;
+    display: block;
+    margin-top: 6px;
+  }
+}
+
+.dna {
+  position: relative;
+
+  > main {
+    margin: 0 auto;
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-width: 100vh;
+    margin-top: 3rem;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 670px;
+    height: 750px;
+  }
+  h5 {
+    width: 1240px;
+    font-size: 40px;
+    color: #3d63cb;
+    font-weight: bolid;
+    position: relative;
+    padding-left: 14px;
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      left: 1px;
+      top: 7px;
+      width: 4px;
+      background: #3d63cb;
+      height: 65px;
+      font-size: 40px;
+    }
+    &::after {
+      content: "服務項目";
+      top: 100%;
+      width: 200px;
+      background: none;
+      display: block;
+      margin-left: 1rem;
+      color: black;
+      font-size: 24px;
+    }
+  }
+}
+
+.dna-nav {
+  display: grid;
+  padding-left: 2px;
+  width: 1240px;
+  grid-template-columns: repeat(2, max-content);
+  gap: 1rem;
+  padding-top: 4rem;
+  h6 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1.1px;
+    cursor: pointer;
+  }
+}
+.dna-nav-footer {
+  display: grid;
+  width: 1240px;
+  place-items: center;
+  nav {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 1rem;
+    transform: translateY(100px);
+    > div {
+      width: 91px;
+      height: 3px;
+      cursor: pointer;
+    }
+  }
+}
+.dna-content {
+  margin-left: 3px;
+  width: 1240px;
+  color: black;
+  height: 320px;
+  display: grid;
+
+  background: white;
+  grid-template-columns: repeat(2, 305px) 630px;
+  //@warngap: 1rem;
+  position: relative;
+  z-index: 2;
+  > div {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 2;
+    order: 1;
+    background: white;
+  }
+  > div:last-child {
+    background: url("/home_image/healthcare.png") no-repeat center center;
+    background-size: 630px 400px;
+    border-radius: none !important;
+    order: 2;
+    transform: translate3d(-30px, -140px, 0);
+    z-index: 1;
+  }
+}
+
+.dna-tab2 {
+  grid-template-columns: 610px 630px;
+  > div:first-child {
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+  }
+  > div:last-child {
+    background: url("/home_image/fix.png") no-repeat center center;
+  }
+}
+
+.dtc-clip-path {
+  clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+  height: 2021px;
+  width: 100vw;
+  background: #f7f7f7;
+  transform: translateY(170px);
+  > footer {
+    height: 90px;
+    background: #242424;
+    display: grid;
+    place-items: center;
+    main {
+      width: 288px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 5px;
+      > div:last-child {
+        font-size: 13px;
+      }
+      nav {
+        display: grid;
+        grid-template-columns: max-content 1px max-content 1px max-content;
+        gap: 1rem;
+        > div {
+          background: white;
+          height: 70%;
+        }
+      }
+    }
+    h5 {
+      color: #cecece;
+      font-size: 18px;
+      text-align: center;
+      transform: translateX(-10px);
+    }
+    h6 {
+      color: #f2f2f2;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
+}
+</style>

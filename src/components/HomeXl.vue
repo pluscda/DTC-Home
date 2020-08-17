@@ -38,9 +38,9 @@
 
         <section class="dna-content dna-tab2" v-if="tab == 2">
           <div>
-            <main style="font-size:20px">
-              <div style="font-size:20px !important">專業的團隊與豐富的建置及維護經驗,幫您把關系統每一個環節建置穩定的系統,以下為本公司所提供的系統建置與維護項目：</div>
-              <div  style="font-size:20px !important;">資訊安全系統建置與維護 數位監控系統建置與維護 資訊設備軟體硬體採購</div>
+            <main>
+              <div style="font-size:20px !importnat;">專業的團隊與豐富的建置及維護經驗,幫您把關系統每一個環節建置穩定的系統,以下為本公司所提供的系統建置與維護項目：</div>
+              <div style="font-size:20px !importnat;">資訊安全系統建置與維護 數位監控系統建置與維護 資訊設備軟體硬體採購</div>
             </main>
           </div>
           <div></div>
@@ -138,16 +138,17 @@ export default {
   &::after {
     position: absolute;
     top: 100%;
-    content: "專業團隊完整的產品線以及豐富醫療產業設備與系統建置經驗，更擁有醫學中心醫療系統開發建置經驗";
-    width: 756px;
+    content: "一流的專業團隊、完整的產品線以及豐富醫療產業設備與系統建置經驗,更擁有醫學中心等級得醫療系統開發建置經驗";
+    width: 856px;
     font-size: 16px;
     display: block;
     margin-top: -20px;
   }
+  
   &::before {
     position: absolute;
     top: 100%;
-    content: "可提供客戶顧問級的服務以及不同規模醫療院所適合整體醫療解決方案";
+    content: " 可依照不同規模醫療等級得院所提供最佳的解決方案。";
     width: 756px;
     font-size: 16px;
     display: block;

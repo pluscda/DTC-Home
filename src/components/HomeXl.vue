@@ -15,23 +15,23 @@
           <h6 @click="tab = 2" :style="tab == 2 ? 'color:#5D5D5D' : 'color:#8B8B8B;'">資訊設備系統解決方案</h6>
         </nav>
         <section class="dna-content" v-if="tab == 1">
-          <div>
-            <p>HIS-醫院資訊系統</p>
-            <p>PACS-影像醫學傳輸系統</p>
-            <p>SRRS-手術記錄報告系統</p>
-            <p>EMR-電子病例管理系統</p>
-            <p>PES-病理檢驗系統</p>
-            <p>LIS-檢驗資訊系統</p>
-            <p>CTPS-癌症管理系統</p>
+          <div style="padding:40px;" class="ask-1">
+              <div>HIS-醫院資訊系統</div>
+              <div>PACS-影像醫學傳輸系統</div>
+              <div>SRRS-手術記錄報告系統</div>
+              <div>EMR-電子病例管理系統</div>
+              <div>PES-病理檢驗系統</div>
+              <div>LIS-檢驗資訊系統</div>
+              <div>CTPS-癌症管理系統</div>
           </div>
-          <div>
-            <p>HAS-醫院評鑑系統</p>
-            <p>POC-床邊照護系統</p>
-            <p>MRIS-病歷掃描倉儲系統</p>
-            <p>ADS-血液淨化管理系統</p>
-            <p>IHE-區域醫療平台</p>
-            <p>PHR-基層醫療管理</p>
-            <p>RIS-放射資訊系統</p>
+          <div style="padding:40px;"  class="ask-2">
+            <div>HAS-醫院評鑑系統</div>
+            <div>POC-床邊照護系統</div>
+            <div>MRIS-病歷掃描倉儲系統</div>
+            <div>ADS-血液淨化管理系統</div>
+            <div>IHE-區域醫療平台</div>
+            <div>PHR-基層醫療管理</div>
+            <div>RIS-放射資訊系統</div>
           </div>
           <div></div>
         </section>
@@ -245,12 +245,14 @@ export default {
   position: relative;
   z-index: 2;
   > div {
-    padding: 10px;
+    padding: 0px 60px;
     display: grid;
     grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: end;
     z-index: 2;
     order: 1;
-    background: white;
+    background: white; 
   }
   > div:last-child {
     background: url("/home_image/healthcare.png") no-repeat center center;
@@ -325,6 +327,17 @@ export default {
       cursor: pointer;
       font-size: 14px;
     }
+  }
+}
+
+.ask-1{
+  > div{
+  transform: translateX(80px);
+  }
+}
+.ask-2{
+  > div{
+  transform: translateX(-25px);
   }
 }
 </style>

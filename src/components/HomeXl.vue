@@ -212,7 +212,7 @@ export default {
   padding-top: 4rem;
   
   h6 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     letter-spacing: 1.1px;
     cursor: pointer;

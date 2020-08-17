@@ -37,8 +37,8 @@
         </section>
 
         <section class="dna-content dna-tab2" v-if="tab == 2">
-          <div>
-            <main>
+          <div class="a-img">
+            <main style="opacity:0;">
               <div style="font-size:20px !importnat;">專業的團隊與豐富的建置及維護經驗,幫您把關系統每一個環節建置穩定的系統,以下為本公司所提供的系統建置與維護項目：</div>
               <div style="font-size:20px !importnat;">資訊安全系統建置與維護 數位監控系統建置與維護 資訊設備軟體硬體採購</div>
             </main>
@@ -104,7 +104,7 @@ export default {
 		}
 	},
   mounted(){
-    setInterval(()=> this.tab == 1 ? this.tab = 2 : this.tab = 1, 1000 * 9);
+    //setInterval(()=> this.tab == 1 ? this.tab = 2 : this.tab = 1, 1000 * 9);
   }
 };
 </script>
@@ -346,5 +346,9 @@ export default {
   > div{
   transform: translateX(-25px);
   }
+}
+.a-img{
+  background: url(/home_image/text2.png) no-repeat center center !important;
+  background-size:610px 320px !important;;
 }
 </style>

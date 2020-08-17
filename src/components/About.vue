@@ -57,13 +57,13 @@
 </template>
 
 <script>
-const names = ['首頁', '關於合華', '焦點訊息', '產品介紹', '成功案例', '報修系統', '人力招募', '聯絡我們'];
+const names = ["首頁", "關於合華", "焦點訊息", "產品介紹", "成功案例", "報修系統", "人力招募", "聯絡我們"];
 export default {
-	data() {
-		return {
-			names,
-		};
-	},
+  data() {
+    return {
+      names,
+    };
+  },
 };
 </script>
 
@@ -136,7 +136,7 @@ h6 {
   font-size: 20px;
   line-height: 40px;
   text-align: center;
-  transform: translateX(60px);
+  //transform: translateX(60px);
   cursor: pointer;
 }
 

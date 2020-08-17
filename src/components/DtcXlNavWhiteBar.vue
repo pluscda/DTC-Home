@@ -8,7 +8,7 @@
 </template>
 
 <script>
-const names = ["首頁", "關於合華", "焦點訊息", "產品介紹", "成功案例", "報修系統", "人力招募", "聯絡我們"];
+const names = ["首頁", "關於合華", "焦點訊息", "產品介紹", "成功案例", "人力招募", "聯絡我們"];
 export default {
   data() {
     return {

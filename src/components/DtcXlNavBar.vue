@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div></div>
-    <img src="home_image/logo_white.svg" />
+    <img src="home_image/logo_white.svg" width="290" height="54" />
     <div></div>
     <main v-for="(item, i) in names" :key="i">{{ item }}</main>
   </nav>
@@ -21,7 +21,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 nav {
-  height: 100px;
+  height: 80px;
   z-index: 3;
   width: 100vw;
   display: grid;
@@ -30,7 +30,7 @@ nav {
   left: 0;
   background: rgba(#000, 0.2);
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   grid-template-columns: minmax(12px, 1fr) 260px 120px repeat(8, max-content) 1fr;
   place-items: center;
   > main {

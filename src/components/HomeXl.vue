@@ -11,8 +11,8 @@
       <nav>
         <h5>SERVICE ITEMS</h5>
         <nav class="dna-nav">
-          <h6 @click="tab = 1" :style="tab == 1 ? 'color:#5D5D5D' : 'color:#8B8B8B;'">醫療資訊系統解決方案</h6>
-          <h6 @click="tab = 2" :style="tab == 2 ? 'color:#5D5D5D' : 'color:#8B8B8B;'">資訊設備系統解決方案</h6>
+          <h6 @click="tab = 1" :style="tab == 1 ? 'color:#5D5D5D' : 'color:#8B8B8B; font-size:22px;'">醫療資訊系統解決方案</h6>
+          <h6 @click="tab = 2" :style="tab == 2 ? 'color:#5D5D5D' : 'color:#8B8B8B;font-size:22px;'">資訊設備系統解決方案</h6>
         </nav>
         <section class="dna-content" v-if="tab == 1">
           <div style="padding:40px;" class="ask-1">
@@ -210,6 +210,7 @@ export default {
   grid-template-columns: repeat(2, max-content);
   gap: 1rem;
   padding-top: 4rem;
+  
   h6 {
     font-size: 24px;
     font-weight: bold;
@@ -244,6 +245,7 @@ export default {
   //@warngap: 1rem;
   position: relative;
   z-index: 2;
+  margin-top:1rem;
   > div {
     padding: 0px 60px;
     display: grid;

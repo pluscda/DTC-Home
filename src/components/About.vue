@@ -32,11 +32,8 @@
         <img src="home_image/quality_img.png" class="dtc-imgs" />
         <main class="nav-main">
           <div>獲獎紀錄</div>
-          <div>1.醫療影像資料擷取整合裝置</div>
-          <div>2.遠距醫療無線偵測系統</div>
-          <div>3.手術影像無線傳輸紀錄及管理系統</div>
-          <div>4.門診報到裝置及門診報到系統專利</div>
-          <div>5.手術房影像傳輸管理系統及使用其之醫療管理系統專利</div>
+          <div>1.醫學影像軟體獲得國家優良商 品金牌獎</div>
+          <div>2.2018第一屆總統盃黑客松軟體 創新大賽優良團隊前五名</div>
         </main>
       </nav>
 
@@ -44,12 +41,13 @@
         <p>國際證照及品質</p>
         <img src="home_image/prize_img.png" class="dtc-imgs" />
         <main class="nav-main">
-          <div>專利技術</div>
-          <div>1.醫療影像資料擷取整合裝置</div>
-          <div>2.遠距醫療無線偵測系統</div>
-          <div>3.手術影像無線傳輸紀錄及管理系統</div>
-          <div>4.門診報到裝置及門診報到系統專利</div>
-          <div>5.手術房影像傳輸管理系統及使用其之醫療管理系統專利</div>
+          <div>國際證照及品質</div>
+          <div>1.ISO 9001認證</div>
+          <div>2.GMP及FDAClass II認證</div>
+          <div>3.資料庫證照（Oracle,SQL）3張</div>
+          <div>4.網路系統（CCNA等）4張</div>
+          <div>5.伺服器及系統專業證照 （MCP,MCSE,MCSA等）14張</div>
+          <div>6.磁碟陣列（EMC）1張</div>
         </main>
       </nav>
     </div>

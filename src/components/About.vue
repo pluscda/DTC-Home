@@ -32,8 +32,8 @@
         <img src="home_image/quality_img.png" class="dtc-imgs" />
         <main class="nav-main">
           <div>獲獎紀錄</div>
-          <div>1.醫學影像軟體獲得國家優良商 品金牌獎</div>
-          <div>2.2018第一屆總統盃黑客松軟體 創新大賽優良團隊前五名</div>
+          <div>1.醫學影像軟體獲得國家優良商品金牌獎</div>
+          <div>2.2018第一屆總統盃黑客松軟體創新大賽優良團隊前五名</div>
         </main>
       </nav>
 

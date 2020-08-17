@@ -15,20 +15,16 @@ export default {
     var swiper = new Swiper(".swiper-container", {
       autoplay: {
         delay: 5000,
-        disableOnInteraction: false
+        disableOnInteraction: false,
       },
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   clickable: true
-      // }
       navigation: {
         nextEl: ".swiper-button-next2",
-        prevEl: ".swiper-button-prev2"
-      }
+        prevEl: ".swiper-button-prev2",
+      },
     });
     setTimeout(() => document.querySelector("#myVid").play(), 0);
   },
-  components: {}
+  components: {},
 };
 </script>
 

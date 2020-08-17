@@ -8,7 +8,7 @@
     </div>
     <section class="dna">
       <img src="home_image/dna.svg" />
-      <main style="margin-left:190px;">
+      <nav>
         <h5>SERVICE ITEMS</h5>
         <nav class="dna-nav">
           <h6 @click="tab = 1" :style="tab == 1 ? 'color:#5D5D5D' : 'color:#8B8B8B;'">醫療資訊系統解決方案</h6>
@@ -52,6 +52,7 @@
           </nav>
         </footer>
       </main>
+      </nav>
     </section>
     <main class="dtc-clip-path">
       <News></News>
@@ -153,8 +154,10 @@ export default {
 
 .dna {
   position: relative;
-
-  > main {
+  width:100vw;
+  display:grid;
+  place-items: center;
+ nav > main {
     margin: 0 auto;
     position: relative;
     display: grid;
@@ -236,7 +239,6 @@ export default {
   color: black;
   height: 320px;
   display: grid;
-
   background: white;
   grid-template-columns: repeat(2, 305px) 630px;
   //@warngap: 1rem;
@@ -257,6 +259,17 @@ export default {
     order: 2;
     transform: translate3d(-30px, -140px, 0);
     z-index: 1;
+  }
+  &::after{
+    position:absolute;
+    content: '';
+    top:0;
+    left:0;
+    display:block;
+    z-index:1;
+    width: 610px;
+    height:305px;
+    box-shadow: 0px 15px 16px #00000029;
   }
 }
 

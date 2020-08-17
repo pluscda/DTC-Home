@@ -38,9 +38,9 @@
 
         <section class="dna-content dna-tab2" v-if="tab == 2">
           <div>
-            <main>
-              <p>專業的團隊與豐富的建置及維護經驗,幫您把關系統每一個環節建置穩定的系統,以下為本公司所提供的系統建置與維護項目：</p>
-              <p>資訊安全系統建置與維護 數位監控系統建置與維護 資訊設備軟體硬體採購</p>
+            <main style="font-size:20px">
+              <div style="font-size:20px !important">專業的團隊與豐富的建置及維護經驗,幫您把關系統每一個環節建置穩定的系統,以下為本公司所提供的系統建置與維護項目：</div>
+              <div  style="font-size:20px !important;">資訊安全系統建置與維護 數位監控系統建置與維護 資訊設備軟體硬體採購</div>
             </main>
           </div>
           <div></div>
@@ -60,7 +60,7 @@
       <Contact style="margin-top:5.5rem;"></Contact>
       <footer>
         <main>
-          <h5>DATACOM TECH.</h5>
+          <h5 style="transform:translateY(10px)">DATACOM TECH.</h5>
           <nav>
             <h6>隱私權政策</h6>
             <div></div>
@@ -68,7 +68,7 @@
             <div></div>
             <h6>使用者條款</h6>
           </nav>
-          <div>Copyright©2020 DATACOM. All rights reserved.</div>
+          <div style="transform:translate(20px, -7px)">Copyright©2020 DATACOM. All rights reserved.</div>
         </main>
       </footer>
     </main>
@@ -303,6 +303,7 @@ export default {
     background: #242424;
     display: grid;
     place-items: center;
+   
     main {
       width: 288px;
       display: grid;

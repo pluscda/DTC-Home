@@ -102,7 +102,10 @@ export default {
 		visibleHandler(visible){
 			this.normalNavBar = visible;
 		}
-	}
+	},
+  mounted(){
+    setInterval(()=> this.tab == 1 ? this.tab = 2 : this.tab = 1, 1000 * 9);
+  }
 };
 </script>
 

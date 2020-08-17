@@ -8,13 +8,13 @@
 </template>
 
 <script>
-const names = ['首頁', '關於合華', '焦點訊息', '產品介紹', '成功案例', '報修系統', '人力招募', '聯絡我們'];
+const names = ["首頁", "關於合華", "焦點訊息", "產品介紹", "成功案例", "報修系統", "人力招募", "聯絡我們"];
 export default {
-	data() {
-		return {
-			names,
-		};
-	},
+  data() {
+    return {
+      names,
+    };
+  },
 };
 </script>
 
@@ -33,6 +33,7 @@ nav {
   font-size: 20px;
   grid-template-columns: minmax(12px, 1fr) 260px 120px repeat(8, max-content) 1fr;
   place-items: center;
+  box-shadow: 0px 3px 6px #00000029;
   > main {
     cursor: pointer;
     padding: 0 1rem;

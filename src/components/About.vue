@@ -89,7 +89,7 @@ h5 {
     background: #3d63cb;
     height: 80px;
     top: 6px;
-    left: -10px;
+    left: -15px;
   }
 }
 h6 {

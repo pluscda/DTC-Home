@@ -22,14 +22,33 @@
         </div>
       </div>
       <div class="right">
-        <img src="home_image/dtcMap.png" width="540" height="370" />
+        <!-- <img src="home_image/dtcMap.png" width="540" height="370" /> -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14463.332737550358!2d121.4843488!3d25.0057837!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf6166455d2a4b05d!2z5ZCI6I-v56eR5oqA6IKh5Lu95pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1597717084437!5m2!1szh-TW!2stw"
+          width="540"
+          height="370"
+          frameborder="0"
+          style="border: 0;"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+        ></iframe>
       </div>
     </main>
   </section>
 </template>
 
 <script>
-const names = ["首頁", "關於合華", "焦點訊息", "產品介紹", "成功案例", "報修系統", "人力招募", "聯絡我們"];
+const names = [
+  "首頁",
+  "關於合華",
+  "焦點訊息",
+  "產品介紹",
+  "成功案例",
+  "報修系統",
+  "人力招募",
+  "聯絡我們",
+];
 export default {
   data() {
     return {

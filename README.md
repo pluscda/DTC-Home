@@ -1,4 +1,4 @@
-# DCT offical new website 
+# DTC offical new website 
 
 ## Project setup
 ```

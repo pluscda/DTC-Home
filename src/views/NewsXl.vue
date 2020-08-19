@@ -4,10 +4,21 @@
     <div class="banner">
       <img src="news_title.svg" width="140" />
     </div>
-    <img src="2019_news.jpg" class="dtc-body mt-4" />
+
+    <img src="2019_news.jpg" class="dtc-body mt-4" v-if="currentPage == 1" />
+    <img src="2017_news.jpg" class="dtc-body mt-4" v-if="currentPage == 2" />
+    <img src="2015_news.jpg" class="dtc-body mt-4" v-if="currentPage == 3" />
+    <img src="2012_news.jpg" class="dtc-body mt-4" v-if="currentPage == 4" />
 
     <div class="pages-dtc mt-4 mb-4">
-      <b-pagination-nav v-model="currentPage" :number-of-pages="3" prev-text="上一頁" next-text="下一頁"></b-pagination-nav>
+      <b-pagination-nav
+        :link-gen="linkGen"
+        use-router
+        v-model="currentPage"
+        :number-of-pages="4"
+        prev-text="上一頁"
+        next-text="下一頁"
+      ></b-pagination-nav>
     </div>
     <footer>
       <main>
@@ -38,6 +49,20 @@ export default {
   },
   components:{
     DtcXlNavWhiteBar
+  },
+  methods:{
+    linkGen(){
+      return "news";
+    }
+  },
+  watch:{
+    currentPage(){
+     window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+    }
   }
 };
 </script>

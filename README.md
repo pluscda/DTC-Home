@@ -1,4 +1,4 @@
-# DTC offical new website 2020 
+# DTC  new website 2020 
 
 ## Project setup
 ```

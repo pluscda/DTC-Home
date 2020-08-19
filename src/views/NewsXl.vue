@@ -5,6 +5,10 @@
       <img src="news_title.svg" width="140" />
     </div>
     <img src="2019_news.jpg" class="dtc-body mt-4" />
+
+    <div class="pages-dtc mt-4 mb-4">
+      <b-pagination-nav v-model="currentPage" :number-of-pages="3" prev-text="上一頁" next-text="下一頁"></b-pagination-nav>
+    </div>
     <footer>
       <main>
         <h5 style="transform:translateY(10px)">DATACOM TECH.</h5>
@@ -29,7 +33,7 @@ import DtcXlNavWhiteBar from '@/components/DtcXlNavWhiteBar.vue';
 export default {
   data() {
     return {
-      
+      currentPage: 1,
     };
   },
   components:{
@@ -45,6 +49,7 @@ export default {
   color: black;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 .dtc-body {
   display: block;
@@ -60,6 +65,15 @@ export default {
   place-items: center;
   > img {
     transform: translateY(40px);
+  }
+}
+
+.pages-dtc {
+  display: grid;
+  min-width: 1200px;
+  place-items: center;
+  > div {
+    transform: translateX(200px);
   }
 }
 

@@ -75,7 +75,9 @@
             <div></div>
             <h6>使用者條款</h6>
           </nav>
-          <div style="transform:translate(20px, -7px)">Copyright©2020 DATACOM. All rights reserved.</div>
+          <div
+            style="transform:translate(20px, -7px);font-size:12px;"
+          >Copyright©2020 DATACOM. All rights reserved.</div>
         </main>
       </footer>
     </main>

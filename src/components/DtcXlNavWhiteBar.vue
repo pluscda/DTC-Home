@@ -3,7 +3,7 @@
     <div></div>
     <img src="home_image/logo_gray.svg" width="290" height="54" />
     <div></div>
-    <main v-for="(item, i) in names" :key="i">{{ item }}</main>
+    <main v-for="(item, i) in names" :key="i" @click="$router.push(links[i])">{{ item }}</main>
   </nav>
 </template>
 

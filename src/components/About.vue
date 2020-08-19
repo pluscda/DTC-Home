@@ -13,7 +13,7 @@
         <p>PACS廠商的系統及有效解決各種疑</p>
         <p>難與技術問題，提供醫療院所更高</p>
         <p>規的管理與流程改造建議</p>
-        <div class="more-about">瞭解更多</div>
+        <div class="more-about mt-3" @click="$router.push('about')">瞭解更多</div>
       </main>
       <nav>
         <p>專 利 技 術</p>
@@ -94,7 +94,7 @@ h6 {
   color: black;
   font-size: 24px;
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .about-container {
   display: grid;

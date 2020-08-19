@@ -305,6 +305,21 @@ export default {
   }
 }
 
+.ask-1 {
+  > div {
+    transform: translateX(80px);
+  }
+}
+.ask-2 {
+  > div {
+    transform: translateX(-25px);
+  }
+}
+.a-img {
+  background: url(/home_image/text2.png) no-repeat center center !important;
+  background-size: 610px 320px !important;
+}
+
 .dtc-clip-path {
   clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
   height: 2021px;
@@ -347,20 +362,5 @@ export default {
       font-size: 14px;
     }
   }
-}
-
-.ask-1 {
-  > div {
-    transform: translateX(80px);
-  }
-}
-.ask-2 {
-  > div {
-    transform: translateX(-25px);
-  }
-}
-.a-img {
-  background: url(/home_image/text2.png) no-repeat center center !important;
-  background-size: 610px 320px !important;
 }
 </style>

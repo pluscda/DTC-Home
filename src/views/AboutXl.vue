@@ -5,6 +5,21 @@
       <img src="about_titlw.svg" width="140" />
     </div>
     <img src="about_text.jpg" class="dtc-body" />
+    <footer>
+      <main>
+        <h5 style="transform:translateY(10px)">DATACOM TECH.</h5>
+        <nav>
+          <h6>隱私權政策</h6>
+          <div></div>
+          <h6>網站安全政策</h6>
+          <div></div>
+          <h6>使用者條款</h6>
+        </nav>
+        <div
+          style="color:white;transform:translate(20px, -7px);font-size:12px;"
+        >Copyright©2020 DATACOM. All rights reserved.</div>
+      </main>
+    </footer>
   </section>
 </template>
 
@@ -45,6 +60,43 @@ export default {
   place-items: center;
   > img {
     transform: translateY(40px);
+  }
+}
+
+footer {
+  height: 90px;
+  background: #242424;
+  display: grid;
+  place-items: center;
+
+  main {
+    width: 288px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    > div:last-child {
+      font-size: 13px;
+    }
+    nav {
+      display: grid;
+      grid-template-columns: max-content 1px max-content 1px max-content;
+      gap: 1rem;
+      > div {
+        background: white;
+        height: 70%;
+      }
+    }
+  }
+  h5 {
+    color: #cecece;
+    font-size: 18px;
+    text-align: center;
+    transform: translateX(-10px);
+  }
+  h6 {
+    color: #f2f2f2;
+    cursor: pointer;
+    font-size: 14px;
   }
 }
 </style>

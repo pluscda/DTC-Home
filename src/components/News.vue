@@ -3,7 +3,7 @@
     <main>
       <nav class="aside-right">
         <h5>NEWS</h5>
-        <footer>更多消息</footer>
+        <footer @click="$router.push('news')">更多消息</footer>
       </nav>
       <div style="padding:10px;" class="my-sec">
         <div>2019/10/06</div>

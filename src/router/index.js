@@ -28,6 +28,21 @@ const routes = [
     name: "news",
     component: () => import(/* webpackChunkName: "about" */ "../views/NewsXl.vue"),
   },
+  {
+    path: "/product",
+    name: "product",
+    component: () => import(/* webpackChunkName: "about" */ "../views/ProductXl.vue"),
+  },
+  {
+    path: "/success",
+    name: "success",
+    component: () => import(/* webpackChunkName: "about" */ "../views/SuccessXl.vue"),
+  },
+  {
+    path: "/104",
+    name: "104",
+    component: () => import(/* webpackChunkName: "about" */ "../views/104Xl.vue"),
+  },
 ];
 
 const router = new VueRouter({

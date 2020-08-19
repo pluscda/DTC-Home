@@ -1,13 +1,14 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomeXl from '@/components/HomeXl.vue';
+import HomeXl from "@/components/HomeXl.vue";
 
 Vue.use(VueRouter);
 
-const routes = [{
+const routes = [
+  {
     path: "/",
     name: "Home",
-    component: HomeXl
+    component: HomeXl,
   },
   {
     path: "/about",
@@ -15,13 +16,12 @@ const routes = [{
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-      import( /* webpackChunkName: "about" */ "../views/About.vue")
-  }
+    component: () => import(/* webpackChunkName: "about" */ "../views/AboutXl.vue"),
+  },
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
 });
 
 export default router;

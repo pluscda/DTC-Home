@@ -9,10 +9,12 @@
 
 <script>
 const names = ["首頁", "關於合華", "焦點訊息", "產品介紹", "成功案例", "人力招募", "聯絡我們"];
+const links = ["home", "about", "news", "product", "success", "104", "contact"];
 export default {
   data() {
     return {
       names,
+      links
     };
   },
 };

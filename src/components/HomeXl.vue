@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="dtc-home">
     <DtcXlNavBar v-if="normalNavBar"></DtcXlNavBar>
     <DtcXlNavWhiteBar v-if="!normalNavBar"></DtcXlNavWhiteBar>
     <div class="banner-img">
@@ -11,20 +11,26 @@
       <nav>
         <h5>SERVICE ITEMS</h5>
         <nav class="dna-nav">
-          <h6 @click="tab = 1" :style="tab == 1 ? 'color:#5D5D5D' : 'color:#8B8B8B; font-size:22px;'">醫療資訊系統解決方案</h6>
-          <h6 @click="tab = 2" :style="tab == 2 ? 'color:#5D5D5D' : 'color:#8B8B8B;font-size:22px;'">資訊設備系統解決方案</h6>
+          <h6
+            @click="tab = 1"
+            :style="tab == 1 ? 'color:#5D5D5D' : 'color:#8B8B8B; font-size:22px;'"
+          >醫療資訊系統解決方案</h6>
+          <h6
+            @click="tab = 2"
+            :style="tab == 2 ? 'color:#5D5D5D' : 'color:#8B8B8B;font-size:22px;'"
+          >資訊設備系統解決方案</h6>
         </nav>
         <section class="dna-content" v-if="tab == 1">
           <div style="padding:40px;" class="ask-1">
-              <div>HIS-醫院資訊系統</div>
-              <div>PACS-影像醫學傳輸系統</div>
-              <div>SRRS-手術記錄報告系統</div>
-              <div>EMR-電子病例管理系統</div>
-              <div>PES-病理檢驗系統</div>
-              <div>LIS-檢驗資訊系統</div>
-              <div>CTPS-癌症管理系統</div>
+            <div>HIS-醫院資訊系統</div>
+            <div>PACS-影像醫學傳輸系統</div>
+            <div>SRRS-手術記錄報告系統</div>
+            <div>EMR-電子病例管理系統</div>
+            <div>PES-病理檢驗系統</div>
+            <div>LIS-檢驗資訊系統</div>
+            <div>CTPS-癌症管理系統</div>
           </div>
-          <div style="padding:40px;"  class="ask-2">
+          <div style="padding:40px;" class="ask-2">
             <div>HAS-醫院評鑑系統</div>
             <div>POC-床邊照護系統</div>
             <div>MRIS-病歷掃描倉儲系統</div>
@@ -39,7 +45,9 @@
         <section class="dna-content dna-tab2" v-if="tab == 2">
           <div class="a-img">
             <main style="opacity:0;">
-              <div style="font-size:20px !importnat;">專業的團隊與豐富的建置及維護經驗,幫您把關系統每一個環節建置穩定的系統,以下為本公司所提供的系統建置與維護項目：</div>
+              <div
+                style="font-size:20px !importnat;"
+              >專業的團隊與豐富的建置及維護經驗,幫您把關系統每一個環節建置穩定的系統,以下為本公司所提供的系統建置與維護項目：</div>
               <div style="font-size:20px !importnat;">資訊安全系統建置與維護 數位監控系統建置與維護 資訊設備軟體硬體採購</div>
             </main>
           </div>
@@ -51,7 +59,6 @@
             <div :style="tab == 2 ? 'background:#007AD0':'background:#D0D0D0'" @click="tab = 2"></div>
           </nav>
         </footer>
-      </main>
       </nav>
     </section>
     <main class="dtc-clip-path">
@@ -111,6 +118,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.dtc-home {
+  overflow-x: hidden;
+}
 .banner-img {
   display: block;
   position: relative;
@@ -144,7 +154,7 @@ export default {
     display: block;
     margin-top: -20px;
   }
-  
+
   &::before {
     position: absolute;
     top: 100%;
@@ -158,10 +168,10 @@ export default {
 
 .dna {
   position: relative;
-  width:100vw;
-  display:grid;
+  width: 100vw;
+  display: grid;
   place-items: center;
- nav > main {
+  nav > main {
     margin: 0 auto;
     position: relative;
     display: grid;
@@ -214,7 +224,7 @@ export default {
   grid-template-columns: repeat(2, max-content);
   gap: 1rem;
   padding-top: 4rem;
-  
+
   h6 {
     font-size: 22px;
     font-weight: bold;
@@ -249,7 +259,7 @@ export default {
   //@warngap: 1rem;
   position: relative;
   z-index: 2;
-  margin-top:1rem;
+  margin-top: 1rem;
   > div {
     padding: 0px 60px;
     display: grid;
@@ -258,7 +268,7 @@ export default {
     align-items: end;
     z-index: 2;
     order: 1;
-    background: white; 
+    background: white;
   }
   > div:last-child {
     background: url("/home_image/healthcare.png") no-repeat center center;
@@ -268,15 +278,15 @@ export default {
     transform: translate3d(-30px, -140px, 0);
     z-index: 1;
   }
-  &::after{
-    position:absolute;
-    content: '';
-    top:0;
-    left:0;
-    display:block;
-    z-index:1;
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 1;
     width: 610px;
-    height:305px;
+    height: 305px;
     box-shadow: 0px 15px 16px #00000029;
   }
 }
@@ -304,7 +314,7 @@ export default {
     background: #242424;
     display: grid;
     place-items: center;
-   
+
     main {
       width: 288px;
       display: grid;
@@ -337,18 +347,18 @@ export default {
   }
 }
 
-.ask-1{
-  > div{
-  transform: translateX(80px);
+.ask-1 {
+  > div {
+    transform: translateX(80px);
   }
 }
-.ask-2{
-  > div{
-  transform: translateX(-25px);
+.ask-2 {
+  > div {
+    transform: translateX(-25px);
   }
 }
-.a-img{
+.a-img {
   background: url(/home_image/text2.png) no-repeat center center !important;
-  background-size:610px 320px !important;;
+  background-size: 610px 320px !important;
 }
 </style>

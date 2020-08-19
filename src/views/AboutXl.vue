@@ -2,7 +2,7 @@
   <section class="about-us">
     <DtcXlNavWhiteBar></DtcXlNavWhiteBar>
     <div class="banner">
-      <img src="about_banner.jpg" />
+      <img src="about_titlw.svg" width="140" />
     </div>
     <img src="about_text.jpg" class="dtc-body" />
   </section>
@@ -39,9 +39,12 @@ export default {
 .banner {
   width: 100vw;
   height: 380px;
-  background: url("about_banner.jpg") no-repeat center center;
+  background: url("/banner.jpg") no-repeat center center;
   background-size: cover;
   display: grid;
   place-items: center;
+  > img {
+    transform: translateY(40px);
+  }
 }
 </style>

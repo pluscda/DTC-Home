@@ -44,5 +44,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: white;
   overflow-x: hidden;
+  > * {
+    overflow-y: hidden !important;
+  }
 }
 </style>

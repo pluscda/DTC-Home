@@ -12,11 +12,11 @@
         <h5>SERVICE ITEMS</h5>
         <nav class="dna-nav">
           <h6
-            @click="tab = 1"
+            @click="clickTab(1)"
             :style="tab == 1 ? 'color:#5D5D5D' : 'color:#8B8B8B; font-size:22px;'"
           >醫療資訊系統解決方案</h6>
           <h6
-            @click="tab = 2"
+            @click="clickTab(2)"
             :style="tab == 2 ? 'color:#5D5D5D' : 'color:#8B8B8B;font-size:22px;'"
           >資訊設備系統解決方案</h6>
         </nav>
@@ -55,8 +55,8 @@
         </section>
         <footer class="dna-nav-footer">
           <nav>
-            <div :style="tab == 1 ? 'background:#007AD0':'background:#D0D0D0'" @click="tab = 1"></div>
-            <div :style="tab == 2 ? 'background:#007AD0':'background:#D0D0D0'" @click="tab = 2"></div>
+            <div :style="tab == 1 ? 'background:#007AD0':'background:#D0D0D0'" @click="clickTab(1)"></div>
+            <div :style="tab == 2 ? 'background:#007AD0':'background:#D0D0D0'" @click="clickTab(2)"></div>
           </nav>
         </footer>
       </nav>
@@ -97,7 +97,8 @@ export default {
 		return {
 			names,
 			tab: 1,
-			normalNavBar: true,
+      normalNavBar: true,
+      timer:'',
 		};
 	},
 	components: {
@@ -108,12 +109,16 @@ export default {
 		Contact
 	},
 	methods:{
+    clickTab(n){
+      this.tab = n;
+      clearInterval(this.timer);
+    },
 		visibleHandler(visible){
 			this.normalNavBar = visible;
 		}
 	},
   mounted(){
-    setInterval(()=> this.tab == 1 ? this.tab = 2 : this.tab = 1, 1000 * 9);
+    this.timer = setInterval(()=> this.tab == 1 ? this.tab = 2 : this.tab = 1, 1000 * 9);
   }
 };
 </script>

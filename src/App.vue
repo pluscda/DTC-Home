@@ -52,6 +52,7 @@ export default {
   padding: 0;
   outline: none !important;
   box-sizing: border-box;
+  font-family: "Microsoft JhengHei", Helvetica, Arial, sans-serif !important;
 }
 #app {
   font-family: "Microsoft JhengHei", Helvetica, Arial, sans-serif !important;

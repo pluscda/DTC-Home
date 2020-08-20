@@ -228,6 +228,7 @@ export default {
 }
 .dna-nav-footer {
   display: grid;
+  background: transparent;
   width: 1240px;
   place-items: center;
   nav {

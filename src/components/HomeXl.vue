@@ -126,6 +126,7 @@ export default {
 .banner-img {
   display: block;
   position: relative;
+  clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 82%);
   img {
     height: 900px;
     object-fit: cover;

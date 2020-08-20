@@ -29,7 +29,7 @@
           height="370"
           frameborder="0"
           style="border: 0;"
-          allowfullscreen=""
+          allowfullscreen
           aria-hidden="false"
           tabindex="0"
         ></iframe>
@@ -61,6 +61,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .contact-us {
+  clip-path: polygon(0 0, 100% 18%, 100% 100%, 0 100%);
   width: 100vw;
   display: grid;
   height: 735px;

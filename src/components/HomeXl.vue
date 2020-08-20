@@ -65,21 +65,6 @@
       <News></News>
       <About style="margin-top:5.5rem;"></About>
       <Contact style="margin-top:5.5rem;"></Contact>
-      <footer>
-        <main>
-          <h5 style="transform:translateY(10px)">DATACOM TECH.</h5>
-          <nav>
-            <h6>隱私權政策</h6>
-            <div></div>
-            <h6>網站安全政策</h6>
-            <div></div>
-            <h6>使用者條款</h6>
-          </nav>
-          <div
-            style="transform:translate(20px, -7px);font-size:12px;"
-          >Copyright©2020 DATACOM. All rights reserved.</div>
-        </main>
-      </footer>
     </main>
   </section>
 </template>

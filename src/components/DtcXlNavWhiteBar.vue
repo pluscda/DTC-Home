@@ -24,7 +24,7 @@ export default {
 <style scoped lang="scss">
 nav {
   height: 80px;
-  z-index: 3;
+  z-index: 9999;
   width: 100vw;
   display: grid;
   position: fixed;

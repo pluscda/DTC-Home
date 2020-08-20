@@ -223,7 +223,7 @@ export default {
     font-weight: bold;
     letter-spacing: 1.1px;
     cursor: pointer;
-    z-index: 999;
+    z-index: 99;
   }
 }
 .dna-nav-footer {

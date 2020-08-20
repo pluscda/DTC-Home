@@ -3,7 +3,7 @@
     <main>
       <nav class="aside-right">
         <h5>NEWS</h5>
-        <footer @click="$router.push('news')">更多消息</footer>
+        <footer class="news-footer" @click="$router.push('news')">更多消息</footer>
       </nav>
       <div style="padding:10px;" class="my-sec">
         <div>2019/10/06</div>
@@ -79,16 +79,17 @@ section {
   position: absolute;
   right: -50px;
   top: -200px;
-  footer {
+  .news-footer {
     position: absolute;
     top: 160%;
     left: 0px;
     width: 120px;
     height: 40px;
-    border: 1px solid #007dd5;
+    border: 1px solid #007dd5 !important;
     border-radius: 28px;
     cursor: pointer;
-    color: #007dd5;
+    color: #007dd5 !important;
+    background: white;
     font-size: 20px;
     text-align: center;
     line-height: 40px;

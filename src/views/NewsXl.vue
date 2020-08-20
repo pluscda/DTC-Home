@@ -6,12 +6,13 @@
     </div>
 
     <img src="2019_news.jpg" class="dtc-body mt-4" v-if="currentPage == 1" />
-    <img src="2017_news.jpg" class="dtc-body mt-4" v-if="currentPage == 2" />
-    <img src="2015_news.jpg" class="dtc-body mt-4" v-if="currentPage == 3" />
-    <img src="2012_news.jpg" class="dtc-body mt-4" v-if="currentPage == 4" />
+    <img src="2017_news.jpg" class="dtc-body mt-4" v-show="currentPage == 2" v-if="isVisible" />
+    <img src="2015_news.jpg" class="dtc-body mt-4" v-show="currentPage == 3" v-if="isVisible" />
+    <img src="2012_news.jpg" class="dtc-body mt-4" v-show="currentPage == 4" v-if="isVisible" />
 
     <div class="pages-dtc mt-4 mb-4">
       <b-pagination-nav
+        v-b-visible.once="visibleHandler"
         :link-gen="linkGen"
         use-router
         v-model="currentPage"
@@ -45,12 +46,16 @@ export default {
   data() {
     return {
       currentPage: 1,
+      isVisible: false,
     };
   },
   components:{
     DtcXlNavWhiteBar
   },
   methods:{
+    visibleHandler(isVisible){
+      this.isVisible = isVisible;
+    },
     linkGen(){
       return "news";
     }

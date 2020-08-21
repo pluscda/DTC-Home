@@ -1,15 +1,21 @@
 <template>
   <nav>
     <div></div>
-    <img src="home_image/logo_gray.svg" width="290" height="54" style="cursor:pointer;" @click="$router.push('home')" />
+    <img
+      src="home_image/logo_gray.svg"
+      width="290"
+      height="54"
+      style="cursor:pointer;"
+      @click="$router.push('home')"
+    />
     <div></div>
     <main v-for="(item, i) in names" :key="i" @click="$router.push(links[i])">{{ item }}</main>
   </nav>
 </template>
 
 <script>
-const names = ["首頁", "關於合華", "焦點訊息", "產品介紹", "成功案例", "人力招募", "聯絡我們"];
-const links = ["home", "about", "news", "product", "success", "104", "contact"];
+const names = ["首頁", "關於合華", "焦點訊息", "產品介紹", "成功案例",  "聯絡我們"];
+const links = ["home", "about", "news", "product", "success", "contact"];
 export default {
   data() {
     return {

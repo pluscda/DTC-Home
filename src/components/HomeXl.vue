@@ -313,12 +313,12 @@ export default {
 
 .ask-1 {
   > div {
-    transform: translateX(80px);
+    transform: translateX(30px);
   }
 }
 .ask-2 {
   > div {
-    transform: translateX(-25px);
+    transform: translateX(-15px);
   }
 }
 .a-img {
@@ -368,5 +368,10 @@ export default {
       font-size: 14px;
     }
   }
+}
+.ask-1,
+.ask-2 {
+  font-size: 20px;
+  color: #434343;
 }
 </style>

@@ -2,18 +2,7 @@
   <section class="about-us">
     <div class="about-container">
       <main>
-        <h5>ABOUT US</h5>
-        <h6>關於我們</h6>
-        <p>合華科技創立於民國七十六年，一</p>
-        <p>直是以專業化的資訊服務為經營的</p>
-        <p>方向，專業醫療背景的負責人與開</p>
-        <p>發團隊，擁有優越的整合技術與</p>
-        <p>經驗以及底層DICOM核心技術，可整</p>
-        <p>合各種不同醫療儀器與各家HIS/</p>
-        <p>PACS廠商的系統及有效解決各種疑</p>
-        <p>難與技術問題，提供醫療院所更高</p>
-        <p>規的管理與流程改造建議</p>
-        <div class="more-about mt-3" @click="$router.push('about')">瞭解更多</div>
+        <img src="index_about.svg" style="transform: translateX(-30px); !importnat;" />
       </main>
       <nav>
         <p>專 利 技 術</p>

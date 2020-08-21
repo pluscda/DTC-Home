@@ -2,7 +2,7 @@
   <section class="about-us">
     <DtcXlNavWhiteBar></DtcXlNavWhiteBar>
     <div class="banner">
-      <img src="news_title.svg" width="140" />
+      <img src="news_title_new.png" width="140" />
     </div>
 
     <img src="2019_news.jpg" class="dtc-body mt-4" v-if="currentPage == 1" />
@@ -74,7 +74,7 @@ export default {
 .banner {
   width: 100vw;
   height: 380px;
-  background: url("/banner.jpg") no-repeat center center;
+  background: url("/news_banner.png") no-repeat center center;
   background-size: cover;
   display: grid;
   place-items: center;

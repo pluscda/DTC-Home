@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section style="margin-top:-100px;">
     <main>
       <nav class="aside-right">
         <h5>NEWS</h5>

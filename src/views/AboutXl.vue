@@ -4,7 +4,7 @@
     <div class="banner">
       <img src="about_titlw.svg" width="140" />
     </div>
-    <img src="about_text.jpg" class="dtc-body" />
+    <img src="about.svg" class="dtc-body" />
   </section>
 </template>
 

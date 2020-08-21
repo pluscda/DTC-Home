@@ -5,7 +5,7 @@
       <img src="client_title.svg" width="140" />
     </div>
     <img src="client_content1.svg" class="dtc-body" v-if="currentPage == 1" />
-    <img src="client_content2.svg" class="dtc-body" v-show="currentPage == 2" v-if="isVisible" />
+    <img src="client_content_two.svg" class="dtc-body" v-show="currentPage == 2" v-if="isVisible" />
 
     <div class="pages-dtc mt-4 mb-4">
       <b-pagination-nav

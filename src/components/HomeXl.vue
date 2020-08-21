@@ -206,7 +206,7 @@ export default {
       top: 7px;
       width: 4px;
       background: #3d63cb;
-      height: 65px;
+      height: 79px;
       font-size: 40px;
     }
     &::after {
@@ -218,7 +218,7 @@ export default {
       display: block;
       margin-left: 1rem;
       color: #5d5d5d;
-      font-size: 24px;
+      font-size: 34px;
     }
   }
 }

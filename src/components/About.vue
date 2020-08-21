@@ -11,37 +11,18 @@
       <nav>
         <p>專 利 技 術</p>
         <img src="home_image/copyright_img.png" class="dtc-imgs" />
-        <main class="nav-main">
-          <div>專利技術</div>
-          <div>1.醫療影像資料擷取整合裝置</div>
-          <div>2.遠距醫療無線偵測系統</div>
-          <div>3.手術影像無線傳輸紀錄及管理系統</div>
-          <div>4.門診報到裝置及門診報到系統專利</div>
-          <div>5.手術房影像傳輸管理系統及使用其之醫療管理系統專利</div>
-        </main>
+        <main class="nav-main"></main>
       </nav>
       <nav>
         <p>國 際 證 照 及 品 質</p>
         <img src="home_image/quality_img.png" class="dtc-imgs" />
-        <main class="nav-main">
-          <div>獲獎紀錄</div>
-          <div>1.醫學影像軟體獲得國家優良商品金牌獎</div>
-          <div>2.2018第一屆總統盃黑客松軟體創新大賽優良團隊前五名</div>
-        </main>
+        <main class="nav-main"></main>
       </nav>
 
       <nav>
         <p>國際證照及品質</p>
         <img src="home_image/prize_img.png" class="dtc-imgs" />
-        <main class="nav-main">
-          <div>國際證照及品質</div>
-          <div>1.ISO 9001認證</div>
-          <div>2.GMP及FDAClass II認證</div>
-          <div>3.資料庫證照（Oracle,SQL）3張</div>
-          <div>4.網路系統（CCNA等）4張</div>
-          <div>5.伺服器及系統專業證照 （MCP,MCSE,MCSA等）14張</div>
-          <div>6.磁碟陣列（EMC）1張</div>
-        </main>
+        <main class="nav-main"></main>
       </nav>
     </div>
   </section>
@@ -136,36 +117,31 @@ h6 {
 .nav-main {
   position: absolute;
   opacity: 0;
-  top: 100%;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0%;
-  background: rgba(#000, 0.1);
   width: 100%;
-  height: 0;
-  color: white;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  height: 100%;
   z-index: 88;
-  font-size: 16px;
-  padding: 0 10px;
-  transition: all 1s ease-in-out;
-  > div {
-    margin-bottom: 1rem;
-  }
-  > div:first-child {
-    font-size: 24px;
-  }
+  transition: all 0.8s ease-in-out;
+  clip-path: inset(100% 0 0 0);
+  background: url("/quality_hover.png") no-repeat top left;
+  background-size: cover;
 }
+nav:nth-child(2) .nav-main {
+  background: url("/prize_hover.png") no-repeat top left;
+}
+
+nav:nth-child(3) .nav-main {
+  background: url("/patented_hover.png") no-repeat top left;
+}
+
 nav:hover {
   .nav-main {
     transition: all 0.8s ease-in-out;
-    opacity: 1 !important;
-    top: 0;
-    height: 100%;
-    background: rgba(#000, 0.9);
-    cursor: pointer;
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
   }
 }
 </style>

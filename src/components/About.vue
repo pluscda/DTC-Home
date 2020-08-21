@@ -61,6 +61,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .about-us {
+  padding-top: 30px;
   width: 100vw;
   display: grid;
   place-items: center;

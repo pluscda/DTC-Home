@@ -76,7 +76,7 @@ main {
   display: grid;
   grid-template-columns: 317px 540px;
   gap: 6rem;
-  margin-top: -100px;
+  //margin-top: -100px;
 }
 .left {
   display: flex;

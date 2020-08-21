@@ -2,10 +2,10 @@
   <section class="about-us">
     <DtcXlNavWhiteBar></DtcXlNavWhiteBar>
     <div class="banner">
-      <img src="client_title.svg" width="140" />
+      <img src="case_title.png" width="140" />
     </div>
-    <img src="client_content1.svg" class="dtc-body" v-if="currentPage == 1" />
-    <img src="client_content_two.svg" class="dtc-body" v-show="currentPage == 2" v-if="isVisible" />
+    <img src="case_content1.png" class="dtc-body" v-if="currentPage == 1" />
+    <img src="case_content2.png" class="dtc-body" v-show="currentPage == 2" v-if="isVisible" />
 
     <div class="pages-dtc mt-4 mb-4">
       <b-pagination-nav

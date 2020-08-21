@@ -19,9 +19,9 @@ export default {
 <style scoped lang="scss">
 section {
   width: 100vw;
-  padding-top: 320px;
   display: grid;
   place-items: center;
+  padding-top: 140px;
   main {
     display: grid;
     width: 1200px;

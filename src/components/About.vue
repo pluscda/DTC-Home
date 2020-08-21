@@ -65,6 +65,7 @@ export default {
   display: grid;
   place-items: center;
   color: black;
+  padding-bottom: 120px;
 }
 
 h5 {

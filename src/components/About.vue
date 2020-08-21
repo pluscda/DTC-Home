@@ -2,7 +2,11 @@
   <section class="about-us">
     <div class="about-container">
       <main>
-        <img src="index_about.svg" style="transform: translateX(-30px); !importnat;" />
+        <img
+          src="index_about.svg"
+          style="transform: translateX(-30px); !importnat;cursor:pointer"
+          @click="$router.push('about')"
+        />
       </main>
       <nav>
         <p>專 利 技 術</p>

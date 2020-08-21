@@ -61,13 +61,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .contact-us {
-  clip-path: polygon(0 0, 100% 18%, 100% 100%, 0 100%);
+  //clip-path: polygon(0 0, 100% 18%, 100% 100%, 0 100%);
   width: 100vw;
   display: grid;
-  height: 735px;
+  height: 586px;
   place-items: center;
   color: white;
-  background: url("/home_image/contact_img.png") no-repeat center center;
+  background: url("/information_bg.png") no-repeat center center;
   background-size: cover;
 
   color: white;
@@ -76,7 +76,7 @@ main {
   display: grid;
   grid-template-columns: 317px 540px;
   gap: 6rem;
-  margin-top: 50px;
+  margin-top: -100px;
 }
 .left {
   display: flex;

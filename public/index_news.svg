@@ -63,7 +63,7 @@
         <tspan x="0" y="0">焦點訊息</tspan>
       </text>
       <text id="_NEWS" data-name=" NEWS" transform="translate(1449 1605)" fill="#3d63cb" font-size="40"
-        font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700">
+        font-family="Microsoft JhengHei" font-weight="700">
         <tspan x="0" y="0">NEWS</tspan>
       </text>
     </g>

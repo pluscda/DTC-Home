@@ -75,8 +75,7 @@
             <line id="Line_16" data-name="Line 16" y1="80" transform="translate(369 874)" fill="none" stroke="#3d63cb"
               stroke-width="4" />
             <text id="_ABOUT" data-name="
-ABOUT" transform="translate(389 891)" fill="#3d63cb" font-size="40" font-family="HelveticaNeue-Bold, Helvetica Neue"
-              font-weight="700">
+ABOUT" transform="translate(389 891)" fill="#3d63cb" font-size="40" font-family="Microsoft JhengHei" font-weight="700">
               <tspan x="0" y="0"></tspan>
               <tspan x="0" y="17">ABOUT</tspan>
             </text>
@@ -93,8 +92,8 @@ ABOUT" transform="translate(389 891)" fill="#3d63cb" font-size="40" font-family=
             <line id="Line_16-2" data-name="Line 16" y1="80" transform="translate(369 874)" fill="none" stroke="#3d63cb"
               stroke-width="4" />
             <text id="_ORGANIZATION" data-name="
-ORGANIZATION" transform="translate(389 891)" fill="#3d63cb" font-size="40"
-              font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700">
+ORGANIZATION" transform="translate(389 891)" fill="#3d63cb" font-size="40" font-family="Microsoft JhengHei"
+              font-weight="700">
               <tspan x="0" y="0"></tspan>
               <tspan x="0" y="17">ORGANIZATION</tspan>
             </text>
@@ -510,7 +509,7 @@ ORGANIZATION" transform="translate(389 891)" fill="#3d63cb" font-size="40"
 合華科技股份有限公司總經理
 " transform="translate(1053 819)" fill="#3d63cb" font-size="20" font-family="Microsoft JhengHei" font-weight="600">
         <tspan x="0" y="0">經歷</tspan>
-        <tspan y="0" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"></tspan>
+        <tspan y="0" font-family="Microsoft JhengHei" font-weight="700"></tspan>
         <tspan fill="#434343" font-size="18" font-family="PingFangSC-Regular, PingFang SC" font-weight="400">
           <tspan x="0" y="35">美國約翰霍普金斯大學校友會常務理事</tspan>
           <tspan y="35" font-family="HelveticaNeue, Helvetica Neue"></tspan>
@@ -528,7 +527,7 @@ ORGANIZATION" transform="translate(389 891)" fill="#3d63cb" font-size="40"
       <text id="創辦人_何慶華先生" data-name="創辦人
 何慶華先生" transform="translate(538 769)" fill="#3d63cb" font-size="20" font-family="Microsoft JhengHei" font-weight="600">
         <tspan x="0" y="0">創辦人</tspan>
-        <tspan y="0" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"></tspan>
+        <tspan y="0" font-family="Microsoft JhengHei" font-weight="700"></tspan>
         <tspan fill="#434343" font-size="18" font-family="PingFangSC-Regular, PingFang SC" font-weight="400">
           <tspan x="0" y="35">何慶華先生</tspan>
         </tspan>
@@ -538,7 +537,7 @@ ORGANIZATION" transform="translate(389 891)" fill="#3d63cb" font-size="40"
 國立交通大學碩士" transform="translate(538 849)" fill="#3d63cb" font-size="20" font-family="Microsoft JhengHei"
         font-weight="600">
         <tspan x="0" y="0">學歷</tspan>
-        <tspan y="0" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"></tspan>
+        <tspan y="0" font-family="Microsoft JhengHei" font-weight="700"></tspan>
         <tspan fill="#434343" font-size="18" font-family="PingFangSC-Regular, PingFang SC" font-weight="400">
           <tspan x="0" y="35">美國約翰霍普金斯醫療政策與管理博士</tspan>
           <tspan y="35" font-family="HelveticaNeue, Helvetica Neue"></tspan>
@@ -554,7 +553,7 @@ ORGANIZATION" transform="translate(389 891)" fill="#3d63cb" font-size="40"
           <line id="Line_16-3" data-name="Line 16" y1="80" transform="translate(369 874)" fill="none" stroke="#3d63cb"
             stroke-width="4" />
           <text id="_FOUNDER" data-name="
-FOUNDER" transform="translate(391 891)" fill="#3d63cb" font-size="40" font-family="HelveticaNeue-Bold, Helvetica Neue"
+FOUNDER" transform="translate(391 891)" fill="#3d63cb" font-size="40" font-family="Microsoft JhengHei"
             font-weight="700">
             <tspan x="0" y="0"></tspan>
             <tspan x="0" y="17">FOUNDER</tspan>

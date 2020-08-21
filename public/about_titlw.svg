@@ -7,7 +7,7 @@
     <text id="首頁_關於合華" data-name="首頁 / 關於合華" transform="translate(960 327)" fill="#fff" font-size="18"
       font-family="Microsoft JhengHei" font-weight="600">
       <tspan x="-62.343" y="0">首頁</tspan>
-      <tspan y="0" xml:space="preserve" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"> / </tspan>
+      <tspan y="0" xml:space="preserve" font-family="Microsoft JhengHei" font-weight="700"> / </tspan>
       <tspan y="0">關於合華</tspan>
     </text>
   </g>

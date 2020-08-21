@@ -135,8 +135,8 @@
             <line id="Line_16" data-name="Line 16" y1="80" transform="translate(369 874)" fill="none" stroke="#3d63cb"
               stroke-width="4" />
             <text id="_ACADEMIC_UNIT" data-name="
-ACADEMIC UNIT" transform="translate(391 891)" fill="#3d63cb" font-size="40"
-              font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700">
+ACADEMIC UNIT" transform="translate(391 891)" fill="#3d63cb" font-size="40" font-family="Microsoft JhengHei"
+              font-weight="700">
               <tspan x="0" y="0"></tspan>
               <tspan x="0" y="17">ACADEMIC UNIT</tspan>
             </text>
@@ -184,8 +184,8 @@ ACADEMIC UNIT" transform="translate(391 891)" fill="#3d63cb" font-size="40"
                 <line id="Line_16-2" data-name="Line 16" y1="80" transform="translate(0 22)" fill="none"
                   stroke="#3d63cb" stroke-width="4" />
                 <text id="_INSTITUTIONS_" data-name="
-INSTITUTIONS " transform="translate(22 39)" fill="#3d63cb" font-size="40"
-                  font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700">
+INSTITUTIONS " transform="translate(22 39)" fill="#3d63cb" font-size="40" font-family="Microsoft JhengHei"
+                  font-weight="700">
                   <tspan x="0" y="0"></tspan>
                   <tspan x="0" y="17">INSTITUTIONS </tspan>
                 </text>

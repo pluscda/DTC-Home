@@ -8,8 +8,8 @@
       <line id="Line_16" data-name="Line 16" y1="80" transform="translate(369 874)" fill="none" stroke="#3d63cb"
         stroke-width="4" />
       <text id="_SERVICE_ITEMS" data-name="
-SERVICE ITEMS" transform="translate(387 891)" fill="#3d63cb" font-size="40"
-        font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700">
+SERVICE ITEMS" transform="translate(387 891)" fill="#3d63cb" font-size="40" font-family="Microsoft JhengHei"
+        font-weight="700">
         <tspan x="0" y="0"></tspan>
         <tspan x="0" y="17">SERVICE ITEMS</tspan>
       </text>

@@ -127,8 +127,7 @@
               stroke-width="4" />
             <text id="_EMR" data-name="
 
-EMR" transform="translate(389 872)" fill="#3d63cb" font-size="40" font-family="HelveticaNeue-Bold, Helvetica Neue"
-              font-weight="700">
+EMR" transform="translate(389 872)" fill="#3d63cb" font-size="40" font-family="Microsoft JhengHei" font-weight="700">
               <tspan x="0" y="0"></tspan>
               <tspan x="0" y="17"></tspan>
               <tspan x="0" y="34">EMR</tspan>
@@ -204,7 +203,7 @@ EMR" transform="translate(389 872)" fill="#3d63cb" font-size="40" font-family="H
               <line id="Line_16-2" data-name="Line 16" y1="80" transform="translate(369 874)" fill="none"
                 stroke="#3d63cb" stroke-width="4" />
               <text id="_SYSTEM" data-name="
-SYSTEM" transform="translate(391 891)" fill="#3d63cb" font-size="40" font-family="HelveticaNeue-Bold, Helvetica Neue"
+SYSTEM" transform="translate(391 891)" fill="#3d63cb" font-size="40" font-family="Microsoft JhengHei"
                 font-weight="700">
                 <tspan x="0" y="0"></tspan>
                 <tspan x="0" y="17">SYSTEM</tspan>
@@ -262,8 +261,8 @@ SYSTEM" transform="translate(391 891)" fill="#3d63cb" font-size="40" font-family
             <line id="Line_16-3" data-name="Line 16" y1="80" transform="translate(369 874)" fill="none" stroke="#3d63cb"
               stroke-width="4" />
             <text id="_ENGINEERING" data-name="
-ENGINEERING" transform="translate(391 890)" fill="#3d63cb" font-size="40"
-              font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700">
+ENGINEERING" transform="translate(391 890)" fill="#3d63cb" font-size="40" font-family="Microsoft JhengHei"
+              font-weight="700">
               <tspan x="0" y="0"></tspan>
               <tspan x="0" y="17">ENGINEERING</tspan>
             </text>

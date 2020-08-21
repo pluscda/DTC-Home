@@ -2,8 +2,8 @@
   <section class="dtc-home">
     <DtcXlNavBar v-if="normalNavBar"></DtcXlNavBar>
     <DtcXlNavWhiteBar v-if="!normalNavBar"></DtcXlNavWhiteBar>
-    <div class="banner-img">
-      <img src="home_image/main_view.png" />
+    <div class="banner-img" ref="myBanner">
+      <img src="main_banner.png" />
       <main class="banner-title" v-b-visible="visibleHandler">DATACOM TECHNOLOGY CORP.</main>
     </div>
     <section class="dna">
@@ -99,7 +99,12 @@ export default {
       clearInterval(this.timer);
     },
 		visibleHandler(visible){
-			this.normalNavBar = visible;
+      this.normalNavBar = visible;
+      if(!visible){
+        this.$refs.myBanner.classList.add('banner-updated');
+      }else{
+         this.$refs.myBanner.classList.remove('banner-updated');
+      }
 		}
 	},
   mounted(){
@@ -113,16 +118,22 @@ export default {
 .dtc-home {
   overflow-x: hidden;
 }
+
 .banner-img {
   display: block;
   position: relative;
-  clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 82%);
+  //clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+  transition: all 1s ease-in-out;
   img {
     height: 900px;
     object-fit: cover;
     width: 100vw;
   }
 }
+.banner-updated {
+  //clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 82%);
+}
+
 .banner-title {
   position: absolute;
   top: 50%;
@@ -164,6 +175,7 @@ export default {
   width: 100vw;
   display: grid;
   place-items: center;
+  margin-top: 5rem;
   nav > main {
     margin: 0 auto;
     position: relative;

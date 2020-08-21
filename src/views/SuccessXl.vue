@@ -4,7 +4,20 @@
     <div class="banner">
       <img src="client_title.svg" width="140" />
     </div>
-    <img src="client_content.svg" class="dtc-body" />
+    <img src="client_content1.svg" class="dtc-body" v-if="currentPage == 1" />
+    <img src="client_content2.svg" class="dtc-body" v-show="currentPage == 2" v-if="isVisible" />
+
+    <div class="pages-dtc mt-4 mb-4">
+      <b-pagination-nav
+        v-b-visible.once="visibleHandler"
+        :link-gen="linkGen"
+        use-router
+        v-model="currentPage"
+        :number-of-pages="2"
+        prev-text="上一頁"
+        next-text="下一頁"
+      ></b-pagination-nav>
+    </div>
   </section>
 </template>
 
@@ -13,11 +26,31 @@ import DtcXlNavWhiteBar from "@/components/DtcXlNavWhiteBar.vue";
 
 export default {
   data() {
-    return {};
+    return {
+      currentPage:1,
+      isVisible:false,
+    };
   },
   components: {
     DtcXlNavWhiteBar,
   },
+  methods:{
+    visibleHandler(isVisible){
+      this.isVisible = isVisible;
+    },
+    linkGen(){
+      return "success";
+    }
+  },
+  watch:{
+    currentPage(){
+     window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+    }
+  }
 };
 </script>
 
@@ -80,6 +113,14 @@ footer {
     color: #f2f2f2;
     cursor: pointer;
     font-size: 14px;
+  }
+}
+.pages-dtc {
+  display: grid;
+  min-width: 1200px;
+  place-items: center;
+  > div {
+    transform: translateX(200px);
   }
 }
 </style>

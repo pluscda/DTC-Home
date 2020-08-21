@@ -2,9 +2,9 @@
   <section class="about-us">
     <DtcXlNavWhiteBar></DtcXlNavWhiteBar>
     <div class="banner">
-      <img src="about_titlw.svg" width="140" />
+      <img src="about_title_new.png" width="140" />
     </div>
-    <img src="about.svg" class="dtc-body" />
+    <img src="about_content_new.png" class="dtc-body" />
   </section>
 </template>
 

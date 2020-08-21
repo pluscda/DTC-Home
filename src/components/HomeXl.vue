@@ -195,7 +195,7 @@ export default {
     width: 1240px;
     font-size: 40px;
     color: #3d63cb;
-    font-weight: bolid;
+    font-weight: bold;
     position: relative;
     padding-left: 14px;
     &::before,
@@ -211,12 +211,13 @@ export default {
     }
     &::after {
       content: "服務項目";
+      font-weight: bold;
       top: 100%;
       width: 200px;
       background: none;
       display: block;
       margin-left: 1rem;
-      color: black;
+      color: #5d5d5d;
       font-size: 24px;
     }
   }

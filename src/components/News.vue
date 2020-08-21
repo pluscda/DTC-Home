@@ -1,6 +1,6 @@
 <template>
   <section style="margin-top:-100px;">
-    <img src="index_news.svg" style="cursor:pointer;" @click="$router.push('news')" />
+    <img src="index_news_new.png" style="cursor:pointer;" @click="$router.push('news')" />
   </section>
 </template>
 

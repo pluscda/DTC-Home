@@ -3,7 +3,7 @@
     <div class="about-container">
       <main>
         <img
-          src="index_about.svg"
+          src="index_about_news.png"
           style="transform: translateX(-30px); !importnat;cursor:pointer"
           @click="$router.push('about')"
         />

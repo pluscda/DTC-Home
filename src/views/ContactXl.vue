@@ -177,6 +177,7 @@ footer {
     color: white;
     font-size: 17px;
     border-radius: 10px;
+    cursor: pointer;
   }
 }
 

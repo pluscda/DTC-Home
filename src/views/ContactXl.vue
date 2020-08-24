@@ -98,7 +98,7 @@ export default {
   footer {
     position: absolute;
     top: 840px;
-    widows: 100vw;
+    width: 100vw;
     display: grid;
     grid-template-columns: 1fr;
     background: transparent;

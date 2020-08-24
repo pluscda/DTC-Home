@@ -2,7 +2,7 @@
   <section class="about-us">
     <DtcXlNavWhiteBar></DtcXlNavWhiteBar>
     <div class="banner">
-      <img src="ris_title.png" width="140" />
+      <img src="ris_title.png" width="323" height="76" />
     </div>
     <div class="dtc-body">
       <nav>
@@ -53,8 +53,12 @@ export default {
   > nav {
     display: flex;
     flex-direction: column;
+    > div:first-child {
+      margin-top: 60px;
+    }
     > div {
       margin-bottom: 30px;
+      cursor: pointer;
     }
   }
 }

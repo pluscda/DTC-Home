@@ -7,12 +7,12 @@
         <div class="grid-2">
           <div class="line-1">姓名</div>
           <div class="line-1">聯絡電話</div>
-          <input placeholder="姓名" />
-          <input placeholder="聯絡電話" />
+          <input placeholder="請輸入" />
+          <input placeholder="請輸入" />
           <div style="grid-column:1/-1">Ｅ-MAIL</div>
-          <input type="email" placeholder="Ｅ-MAIL" style="grid-column:1/-1" class="line-2" />
+          <input type="email" placeholder="請輸入" style="grid-column:1/-1" class="line-2" />
           <div style="grid-column:1/-1">內容資訊</div>
-          <textarea placeholder="內容資訊" style="grid-column:1/-1" spellcheck="false" class="line-3"></textarea>
+          <textarea placeholder="請輸入" style="grid-column:1/-1" spellcheck="false" class="line-3"></textarea>
           <div>
             <img src="verification.png" />
           </div>

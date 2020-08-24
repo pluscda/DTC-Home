@@ -13,7 +13,9 @@
           <input type="email" placeholder="Ｅ-MAIL" style="grid-column:1/-1" class="line-2" />
           <div style="grid-column:1/-1">內容資訊</div>
           <textarea placeholder="內容資訊" style="grid-column:1/-1" spellcheck="false" class="line-3"></textarea>
-          <div></div>
+          <div>
+            <img src="verification.png" />
+          </div>
           <div>送 出</div>
         </div>
         <div>

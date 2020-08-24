@@ -106,7 +106,6 @@ export default {
       display: inline-block;
       width: 100vw;
       height: 390px;
-      object-fit: cover;
       z-index: 3;
     }
   }

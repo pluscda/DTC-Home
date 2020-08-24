@@ -24,7 +24,7 @@
       </nav>
 
       <nav>
-        <p>獲獎紀錄</p>
+        <p>獲 獎 紀 錄</p>
         <img src="home_image/prize_img.png" class="dtc-imgs" />
         <main class="nav-main">
           <img src="three_hover.png" />

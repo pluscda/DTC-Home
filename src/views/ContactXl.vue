@@ -72,7 +72,7 @@ export default {
   place-items: center;
   position: relative;
   z-index: 2;
-  margin-bottom: 80vh;
+  margin-bottom: clamp(80vh, 870px, 870px);
   > img {
     transform: translateY(40px);
   }

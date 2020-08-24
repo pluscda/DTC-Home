@@ -2,16 +2,16 @@
   <section class="about-us">
     <DtcXlNavWhiteBar></DtcXlNavWhiteBar>
     <div class="banner">
-      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 0" />
-      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 1" />
-      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 2" />
-      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 3" />
-      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 4" />
-      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 5" />
-      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 6" />
-      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 7" />
-      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 8" />
-      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 9" />
+      <img src="ris_title.png" height="76" v-if="activeIdx == 0" />
+      <img src="pacs_title.png" height="76" v-if="activeIdx == 1" />
+      <img src="his_title.png" height="76" v-if="activeIdx == 2" />
+      <img src="srrs_title.png" height="76" v-if="activeIdx == 3" />
+      <img src="emr_title.png" height="76" v-if="activeIdx == 4" />
+      <img src="pes_title.png" height="76" v-if="activeIdx == 5" />
+      <img src="lis_title.png" height="76" v-if="activeIdx == 6" />
+      <img src="ctps_title.png" height="76" v-if="activeIdx == 7" />
+      <img src="mris_title.png" height="76" v-if="activeIdx == 8" />
+      <img src="ads_title.png" height="76" v-if="activeIdx == 9" />
     </div>
     <div class="dtc-body">
       <nav>
@@ -45,6 +45,15 @@ export default {
   },
   components:{
     DtcXlNavWhiteBar
+  },
+  watch:{
+    activeIdx(){
+      window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+    }
   }
 };
 </script>

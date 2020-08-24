@@ -2,7 +2,16 @@
   <section class="about-us">
     <DtcXlNavWhiteBar></DtcXlNavWhiteBar>
     <div class="banner">
-      <img src="ris_title.png" width="323" height="76" />
+      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 0" />
+      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 1" />
+      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 2" />
+      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 3" />
+      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 4" />
+      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 5" />
+      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 6" />
+      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 7" />
+      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 8" />
+      <img src="ris_title.png" width="323" height="76" v-if="activeIdx == 9" />
     </div>
     <div class="dtc-body">
       <nav>
@@ -13,8 +22,9 @@
           :key="i"
         >{{item}}</div>
       </nav>
-
-      <img src="ris_content.png" />
+      <main v-for="(item, i) in imgs" :key="i" v-if="i == activeIdx">
+        <img :src="item" />
+      </main>
     </div>
   </section>
 </template>
@@ -23,11 +33,14 @@
 import DtcXlNavWhiteBar from '@/components/DtcXlNavWhiteBar.vue';
 const dummy = `RIS-放射資訊系統 PACS-影像醫學傳輸系統 HIS-醫院資訊系統 SRRS-手術記錄報告系統 EMR-電子病例管理系統 PES-病理檢驗系統 LIS-檢驗資訊系統 CTPS-癌症管理系統 MRIS-病歷掃描倉儲系統 ADS-血液淨化管理系統`;
 const names = dummy.split(" ");
+const imgs = ["ris_content.png","ris_content.png","ris_content.png","ris_content.png","ris_content.png","ris_content.png",
+"ris_content.png","ris_content.png","ris_content.png","ris_content.png"]
 export default {
   data() {
     return {
       names,
       activeIdx:0,
+      imgs,
     };
   },
   components:{
@@ -59,6 +72,15 @@ export default {
     > div {
       margin-bottom: 30px;
       cursor: pointer;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      > img {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+      }
     }
   }
 }

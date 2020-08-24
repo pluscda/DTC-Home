@@ -2,52 +2,36 @@
   <section class="about-us">
     <DtcXlNavWhiteBar></DtcXlNavWhiteBar>
     <div class="banner">
-      <img src="news_title.svg" width="140" />
+      <img src="ris_title.png" width="140" />
     </div>
+    <div class="dtc-body">
+      <nav>
+        <div
+          @click="activeIdx = i"
+          :class=" i == activeIdx ? 'active-nav-dtc' : ''"
+          v-for="(item, i) in names"
+          :key="i"
+        >{{item}}</div>
+      </nav>
 
-    <img src="2019_news.jpg" class="dtc-body mt-4" v-if="currentPage == 1" />
-    <img src="2017_news.jpg" class="dtc-body mt-4" v-if="currentPage == 2" />
-    <img src="2015_news.jpg" class="dtc-body mt-4" v-if="currentPage == 3" />
-    <img src="2012_news.jpg" class="dtc-body mt-4" v-if="currentPage == 4" />
-
-    <div class="pages-dtc mt-4 mb-4">
-      <b-pagination-nav
-        :link-gen="linkGen"
-        use-router
-        v-model="currentPage"
-        :number-of-pages="4"
-        prev-text="上一頁"
-        next-text="下一頁"
-      ></b-pagination-nav>
+      <img src="ris_content.png" />
     </div>
   </section>
 </template>
 
 <script>
 import DtcXlNavWhiteBar from '@/components/DtcXlNavWhiteBar.vue';
-
+const dummy = `RIS-放射資訊系統 PACS-影像醫學傳輸系統 HIS-醫院資訊系統 SRRS-手術記錄報告系統 EMR-電子病例管理系統 PES-病理檢驗系統 LIS-檢驗資訊系統 CTPS-癌症管理系統 MRIS-病歷掃描倉儲系統 ADS-血液淨化管理系統`;
+const names = dummy.split(" ");
 export default {
   data() {
     return {
-      currentPage: 1,
+      names,
+      activeIdx:0,
     };
   },
   components:{
     DtcXlNavWhiteBar
-  },
-  methods:{
-    linkGen(){
-      return "news";
-    }
-  },
-  watch:{
-    currentPage(){
-     window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-    }
   }
 };
 </script>
@@ -59,31 +43,30 @@ export default {
   color: black;
   display: flex;
   flex-direction: column;
-  text-align: center;
 }
 .dtc-body {
-  display: block;
+  display: grid;
+  grid-template-columns: 234px 1fr;
   width: 1200px;
-  margin: 0 auto;
+  gap: 1rem;
+  margin: 4rem auto;
+  > nav {
+    display: flex;
+    flex-direction: column;
+    > div {
+      margin-bottom: 30px;
+    }
+  }
 }
 .banner {
   width: 100vw;
   height: 380px;
-  background: url("/banner.jpg") no-repeat center center;
+  background: url("/product_banner.png") no-repeat center center;
   background-size: cover;
   display: grid;
   place-items: center;
   > img {
     transform: translateY(40px);
-  }
-}
-
-.pages-dtc {
-  display: grid;
-  min-width: 1200px;
-  place-items: center;
-  > div {
-    transform: translateX(200px);
   }
 }
 
@@ -108,6 +91,7 @@ footer {
       > div {
         background: white;
         height: 70%;
+        cursor: pointer;
       }
     }
   }
@@ -122,5 +106,8 @@ footer {
     cursor: pointer;
     font-size: 14px;
   }
+}
+.active-nav-dtc {
+  color: #274db7;
 }
 </style>

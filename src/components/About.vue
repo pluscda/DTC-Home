@@ -11,18 +11,24 @@
       <nav>
         <p>專 利 技 術</p>
         <img src="home_image/copyright_img.png" class="dtc-imgs" />
-        <main class="nav-main"></main>
+        <main class="nav-main">
+          <img src="one_hover.png" />
+        </main>
       </nav>
       <nav>
         <p>國 際 證 照 及 品 質</p>
         <img src="home_image/quality_img.png" class="dtc-imgs" />
-        <main class="nav-main"></main>
+        <main class="nav-main">
+          <img src="two_hover.png" />
+        </main>
       </nav>
 
       <nav>
-        <p>國際證照及品質</p>
+        <p>獲獎紀錄</p>
         <img src="home_image/prize_img.png" class="dtc-imgs" />
-        <main class="nav-main"></main>
+        <main class="nav-main">
+          <img src="three_hover.png" />
+        </main>
       </nav>
     </div>
   </section>
@@ -126,15 +132,6 @@ h6 {
   z-index: 88;
   transition: all 0.8s ease-in-out;
   clip-path: inset(100% 0 0 0);
-  background: url("/quality_hover.png") no-repeat top left;
-  background-size: cover;
-}
-nav:nth-child(2) .nav-main {
-  background: url("/prize_hover.png") no-repeat top left;
-}
-
-nav:nth-child(3) .nav-main {
-  background: url("/patented_hover.png") no-repeat top left;
 }
 
 nav:hover {

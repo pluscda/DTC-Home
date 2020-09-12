@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="628" height="338"
+  viewBox="0 0 628 338">
+  <defs>
+    <filter id="Rectangle_62" x="0" y="0" width="628" height="338" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feFlood flood-opacity="0.161" />
+      <feComposite operator="in" in2="blur" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+  </defs>
+  <g id="Group_6239" data-name="Group 6239" transform="translate(9 6.167)">
+    <g id="Group_6201" data-name="Group 6201">
+      <g transform="matrix(1, 0, 0, 1, -9, -6.17)" filter="url(#Rectangle_62)">
+        <rect id="Rectangle_62-2" data-name="Rectangle 62" width="610" height="320" transform="translate(9 6)"
+          fill="#fff" />
+      </g>
+      <g id="Group_17" data-name="Group 17" transform="translate(58 39.833)">
+        <text id="HIS-醫院資訊系統_PACS-影像醫學傳輸系統_SRRS-手術記錄報告系統_EMR-電子病例管理系統_PES-病理檢驗系統_LIS-檢驗資訊系統_CTPS-癌症管理系統" data-name="HIS-醫院資訊系統
+PACS-影像醫學傳輸系統
+SRRS-手術記錄報告系統
+EMR-電子病例管理系統
+PES-病理檢驗系統
+LIS-檢驗資訊系統
+CTPS-癌症管理系統" transform="translate(0 21)" fill="#434343" font-size="20" font-family="Microsoft JhengHei"
+          letter-spacing="0.05em">
+          <tspan x="0" y="0">HIS-</tspan>
+          <tspan y="0" font-family="Microsoft JhengHei">醫院資訊系統</tspan>
+          <tspan y="0"></tspan>
+          <tspan x="0" y="35">PACS-</tspan>
+          <tspan y="35" font-family="Microsoft JhengHei">影像醫學傳輸系統</tspan>
+          <tspan y="35"></tspan>
+          <tspan x="0" y="70">SRRS-</tspan>
+          <tspan y="70" font-family="Microsoft JhengHei">手術記錄報告系統</tspan>
+          <tspan y="70"></tspan>
+          <tspan x="0" y="105">EMR-</tspan>
+          <tspan y="105" font-family="Microsoft JhengHei">電子病例管理系統</tspan>
+          <tspan y="105"></tspan>
+          <tspan x="0" y="140">PES-</tspan>
+          <tspan y="140" font-family="Microsoft JhengHei">病理檢驗系統</tspan>
+          <tspan y="140"></tspan>
+          <tspan x="0" y="175">LIS-</tspan>
+          <tspan y="175" font-family="Microsoft JhengHei">檢驗資訊系統</tspan>
+          <tspan y="175"></tspan>
+          <tspan x="0" y="210">CTPS-</tspan>
+          <tspan y="210" font-family="Microsoft JhengHei">癌症管理系統</tspan>
+        </text>
+        <text id="HAS-醫院評鑑系統_POC-床邊照護系統_MRIS-病歷掃描倉儲系統_ADS-血液淨化管理系統_IHE-區域醫療平台_PHR-基層醫療管理_RIS-放射資訊系統" data-name="HAS-醫院評鑑系統
+POC-床邊照護系統
+MRIS-病歷掃描倉儲系統
+ADS-血液淨化管理系統
+IHE-區域醫療平台
+PHR-基層醫療管理
+RIS-放射資訊系統" transform="translate(264 23)" fill="#434343" font-size="20" font-family="Microsoft JhengHei"
+          letter-spacing="0.05em">
+          <tspan x="0" y="0">HAS-</tspan>
+          <tspan y="0" font-family="Microsoft JhengHei">醫院評鑑系統</tspan>
+          <tspan y="0"></tspan>
+          <tspan x="0" y="35">POC-</tspan>
+          <tspan y="35" font-family="Microsoft JhengHei">床邊照護系統</tspan>
+          <tspan y="35"></tspan>
+          <tspan x="0" y="70">MRIS-</tspan>
+          <tspan y="70" font-family="Microsoft JhengHei">病歷掃描倉儲系統</tspan>
+          <tspan y="70"></tspan>
+          <tspan x="0" y="105">ADS-</tspan>
+          <tspan y="105" font-family="Microsoft JhengHei">血液淨化管理系統</tspan>
+          <tspan y="105"></tspan>
+          <tspan x="0" y="140">IHE-</tspan>
+          <tspan y="140" font-family="Microsoft JhengHei">區域醫療平台</tspan>
+          <tspan y="140"></tspan>
+          <tspan x="0" y="175">PHR-</tspan>
+          <tspan y="175" font-family="Microsoft JhengHei">基層醫療管理</tspan>
+          <tspan y="175"></tspan>
+          <tspan x="0" y="210">RIS-</tspan>
+          <tspan y="210" font-family="Microsoft JhengHei">放射資訊系統</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

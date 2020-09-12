@@ -6,7 +6,7 @@
       <img src="home_image/main_view.png" />
       <main class="banner-title" v-b-visible="visibleHandler">DATACOM TECHNOLOGY CORP.</main>
     </div>
-    <section class="dna">
+    <section class="dna" test test1>
       <img src="home_image/dna.svg" />
       <nav>
         <h5>SERVICE ITEMS</h5>
@@ -55,8 +55,14 @@
         </section>
         <footer class="dna-nav-footer">
           <nav>
-            <div :style="tab == 1 ? 'background:#007AD0':'background:#D0D0D0'" @click="clickTab(1)"></div>
-            <div :style="tab == 2 ? 'background:#007AD0':'background:#D0D0D0'" @click="clickTab(2)"></div>
+            <div
+              :style="tab == 1 ? 'background:#007AD0' : 'background:#D0D0D0'"
+              @click="clickTab(1)"
+            ></div>
+            <div
+              :style="tab == 2 ? 'background:#007AD0' : 'background:#D0D0D0'"
+              @click="clickTab(2)"
+            ></div>
           </nav>
         </footer>
       </nav>
@@ -76,14 +82,14 @@ import News from '@/components/News.vue';
 import About from '@/components/About.vue';
 import Contact from '@/components/ContactDtc.vue';
 import DtcXlNavWhiteBar from '@/components/DtcXlNavWhiteBar.vue';
-const names = ['醫療資訊系統解決方案', '資訊設備系統解決方案'];
+const names = ['醫療資訊系統解決方案', '資訊設備系統解決方案', '',""];
 export default {
 	data() {
 		return {
 			names,
 			tab: 1,
-      normalNavBar: true,
-      timer:'',
+			normalNavBar: true,
+			timer: '',
 		};
 	},
 	components: {
@@ -91,20 +97,20 @@ export default {
 		DtcXlNavWhiteBar,
 		News,
 		About,
-		Contact
+		Contact,
 	},
-	methods:{
-    clickTab(n){
-      this.tab = n;
-      clearInterval(this.timer);
-    },
-		visibleHandler(visible){
+	methods: {
+		clickTab(n) {
+			this.tab = n;
+			clearInterval(this.timer);
+		},
+		visibleHandler(visible) {
 			this.normalNavBar = visible;
-		}
+		},
 	},
-  mounted(){
-    this.timer = setInterval(()=> this.tab == 1 ? this.tab = 2 : this.tab = 1, 1000 * 9);
-  }
+	mounted() {
+		this.timer = setInterval(() => (this.tab == 1 ? (this.tab = 2) : (this.tab = 1)), 1000 * 9);
+	},
 };
 </script>
 

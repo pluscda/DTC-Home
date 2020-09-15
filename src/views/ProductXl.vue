@@ -21,10 +21,10 @@
         <nav v-if="i == 0" style="margin-left:50px;">
           <h5 class="prods">產品型號</h5>
           <main class="grid-7">
-            <div v-for="(item, t) in risPros1" :key="t" :style="risSelected == t ? 'color:#3D63CB' : ''">{{ item }}</div>
+            <div @click="update(item)" v-for="(item, t) in risPros1" :key="t" :style="risSelected == t ? 'color:#3D63CB' : ''">{{ item }}</div>
           </main>
           <main class="grid-7">
-            <div v-for="(item, k) in risPros2" :key="k" :style="risSelected == t ? 'color:#3D63CB' : ''">{{ item }}</div>
+            <div @click="update(item)" v-for="(item, k) in risPros2" :key="k" :style="risSelected == k + 7 ? 'color:#3D63CB' : ''">{{ item }}</div>
           </main>
         </nav>
         <img :src="item" />
@@ -64,6 +64,12 @@ export default {
   },
   components: {
     DtcXlNavWhiteBar,
+  },
+  methods: {
+    update(name) {
+      const arr = [...risPros1, ...risPros2];
+      this.risSelected = arr.findIndex((s) => s == name);
+    },
   },
   watch: {
     activeIdx() {

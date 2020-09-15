@@ -24,7 +24,7 @@
             <div v-for="(item, t) in risPros1" :key="t" :style="risSelected == t ? 'color:#3D63CB' : ''">{{ item }}</div>
           </main>
           <main class="grid-7">
-            <div v-for="(item, k) in risPros2" :key="k">{{ item }}</div>
+            <div v-for="(item, k) in risPros2" :key="k" :style="risSelected == t ? 'color:#3D63CB' : ''">{{ item }}</div>
           </main>
         </nav>
         <img :src="item" />

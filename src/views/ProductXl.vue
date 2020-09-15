@@ -32,7 +32,7 @@ const imgs = [
   "ris_content.png",
   "//unsplash.it/890/1094?image=1",
   "2020-09-15 09.29.44.jpg",
-  "//unsplash.it/890/1094?image=3",
+  "2020-09-15 09.29.55.jpg",
   "//unsplash.it/890/1094?image=4",
   "//unsplash.it/890/1094?image=5",
   "//unsplash.it/890/1094?image=6",

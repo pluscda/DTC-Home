@@ -17,7 +17,7 @@
       <nav>
         <div @click="activeIdx = i" :class="i == activeIdx ? 'active-nav-dtc' : ''" v-for="(item, i) in names" :key="i">{{ item }}</div>
       </nav>
-      <main v-for="(item, i) in imgs" :key="i" v-if="i == activeIdx">
+      <main v-for="(item, i) in imgs" :key="i" v-show="i == activeIdx">
         <nav v-if="i == 0" style="margin-left:50px;">
           <h5 class="prods">產品型號</h5>
           <main class="grid-7">

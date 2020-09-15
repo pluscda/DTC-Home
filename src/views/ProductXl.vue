@@ -24,7 +24,15 @@
             <div @click="update(item)" v-for="(item, t) in risPros1" :key="t" :style="risSelected == t ? 'color:#3D63CB' : ''">{{ item }}</div>
           </main>
           <main class="grid-7">
-            <div @click="update(item)" v-for="(item, k) in risPros2" :key="k" :style="risSelected == k + 7 ? 'color:#3D63CB' : ''">{{ item }}</div>
+            <div
+              :class="item == 'ImageCore' ? 'ml-2' : ''"
+              @click="update(item)"
+              v-for="(item, k) in risPros2"
+              :key="k"
+              :style="risSelected == k + 7 ? 'color:#3D63CB' : ''"
+            >
+              {{ item }}
+            </div>
           </main>
         </nav>
         <img :src="item" />

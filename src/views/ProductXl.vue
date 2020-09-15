@@ -73,6 +73,7 @@ export default {
   },
   watch: {
     activeIdx() {
+      this.risSelected = 0;
       window.scrollTo({
         top: 0,
         left: 0,

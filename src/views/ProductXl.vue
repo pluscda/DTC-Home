@@ -15,12 +15,7 @@
     </div>
     <div class="dtc-body">
       <nav>
-        <div
-          @click="activeIdx = i"
-          :class=" i == activeIdx ? 'active-nav-dtc' : ''"
-          v-for="(item, i) in names"
-          :key="i"
-        >{{item}}</div>
+        <div @click="activeIdx = i" :class="i == activeIdx ? 'active-nav-dtc' : ''" v-for="(item, i) in names" :key="i">{{ item }}</div>
       </nav>
       <main v-for="(item, i) in imgs" :key="i" v-if="i == activeIdx">
         <img :src="item" />
@@ -30,31 +25,41 @@
 </template>
 
 <script>
-import DtcXlNavWhiteBar from '@/components/DtcXlNavWhiteBar.vue';
+import DtcXlNavWhiteBar from "@/components/DtcXlNavWhiteBar.vue";
 const dummy = `RIS-放射資訊系統 PACS-影像醫學傳輸系統 HIS-醫院資訊系統 SRRS-手術記錄報告系統 EMR-電子病例管理系統 PES-病理檢驗系統 LIS-檢驗資訊系統 CTPS-癌症管理系統 MRIS-病歷掃描倉儲系統 ADS-血液淨化管理系統`;
 const names = dummy.split(" ");
-const imgs = ["ris_content.png","//unsplash.it/890/1094?image=1","//unsplash.it/890/1094?image=2","//unsplash.it/890/1094?image=3","//unsplash.it/890/1094?image=4","//unsplash.it/890/1094?image=5",
-"//unsplash.it/890/1094?image=6","//unsplash.it/890/1094?image=7","//unsplash.it/890/1094?image=8","//unsplash.it/890/1094?image=9"]
+const imgs = [
+  "ris_content.png",
+  "//unsplash.it/890/1094?image=1",
+  "2020-09-15 09.29.44.jpg",
+  "//unsplash.it/890/1094?image=3",
+  "//unsplash.it/890/1094?image=4",
+  "//unsplash.it/890/1094?image=5",
+  "//unsplash.it/890/1094?image=6",
+  "//unsplash.it/890/1094?image=7",
+  "//unsplash.it/890/1094?image=8",
+  "//unsplash.it/890/1094?image=9",
+];
 export default {
   data() {
     return {
       names,
-      activeIdx:0,
+      activeIdx: 0,
       imgs,
     };
   },
-  components:{
-    DtcXlNavWhiteBar
+  components: {
+    DtcXlNavWhiteBar,
   },
-  watch:{
-    activeIdx(){
+  watch: {
+    activeIdx() {
       window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-    }
-  }
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    },
+  },
 };
 </script>
 

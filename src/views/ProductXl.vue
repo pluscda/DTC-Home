@@ -28,18 +28,18 @@
           <main class="grid-7">
             <div
               @click="update(item)"
-              v-for="(item, t) in risPros1"
+              v-for="(item, t) in pacsPros1"
               :key="t"
-              :style="risSelected == t ? 'color:#3D63CB' : ''"
+              :style="pacsSelected == t ? 'color:#3D63CB' : ''"
             >{{ item }}</div>
           </main>
           <main class="grid-7">
             <div
               :class="item == 'ImageCore' ? 'ml-2' : ''"
               @click="update(item)"
-              v-for="(item, k) in risPros2"
+              v-for="(item, k) in pacsPros2"
               :key="k"
-              :style="risSelected == k + 7 ? 'color:#3D63CB' : ''"
+              :style="pacsSelected == k + 7 ? 'color:#3D63CB' : ''"
             >{{ item }}</div>
           </main>
         </nav>
@@ -65,7 +65,7 @@ const imgs = [
   "//unsplash.it/890/1094?image=8",
   "//unsplash.it/890/1094?image=9",
 ];
-const risPros1 = [
+const pacsPros1 = [
   "DC-100",
   "DC-200",
   "DC-300",
@@ -74,7 +74,7 @@ const risPros1 = [
   "DC-700",
   "",
 ];
-const risPros2 = [
+const pacsPros2 = [
   "DC-900",
   "DC-1000",
   "DC-810",
@@ -89,9 +89,9 @@ export default {
       names,
       activeIdx: 0,
       imgs,
-      risPros1,
-      risPros2,
-      risSelected: 0,
+      pacsPros1,
+      pacsPros2,
+      pacsSelected: 0,
     };
   },
   components: {
@@ -99,13 +99,13 @@ export default {
   },
   methods: {
     update(name) {
-      const arr = [...risPros1, ...risPros2];
-      this.risSelected = arr.findIndex((s) => s == name);
+      const arr = [...pacsPros1, ...pacsPros2];
+      this.pacsSelected = arr.findIndex((s) => s == name);
     },
   },
   watch: {
     activeIdx() {
-      this.risSelected = 0;
+      this.pacsSelected = 0;
       window.scrollTo({
         top: 0,
         left: 0,

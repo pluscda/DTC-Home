@@ -1,7 +1,7 @@
 <template>
   <section class="top-section">
     <SideBar></SideBar>
-    <img class="silderBtn" src="arrow-right.svg" @click="$root.$emit('open-sidebar')" style="cursor:pointer;" />
+    <img class="silderBtn" src="arrow-right.svg" @click="openSidebar" style="cursor:pointer;" />
     <div class="dashboard6" id="list" v-if="type == 6">
       <div id="div1">1</div>
       <div id="div2">2</div>
@@ -67,6 +67,9 @@ export default {
     isLogin() {},
   },
   methods: {
+    openSidebar() {
+      this.$root.$emit("open-sidebar");
+    },
     viewFullScreen() {
       var el = document.getElementById("list");
       el.requestFullscreen();

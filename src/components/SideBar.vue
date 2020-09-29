@@ -32,8 +32,6 @@ export default {
       sidebar: "",
       fullMap: false,
       school: "",
-      year,
-      years,
       tab: 1,
       liveList: [],
       names: [],

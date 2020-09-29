@@ -40,48 +40,6 @@ export default {
 #app {
   font-family: "Microsoft JhengHei", Helvetica, Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: white;
   overflow-x: hidden;
-  > * {
-    //overflow-y: hidden !important;
-  }
-}
-
-footer {
-  height: 90px;
-  background: #242424;
-  display: grid;
-  place-items: center;
-
-  main {
-    width: 288px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 5px;
-    > div:last-child {
-      font-size: 13px;
-    }
-    nav {
-      display: grid;
-      grid-template-columns: max-content 1px max-content 1px max-content;
-      gap: 1rem;
-      > div {
-        background: white;
-        height: 70%;
-      }
-    }
-  }
-  h5 {
-    color: #cecece;
-    font-size: 18px;
-    text-align: center;
-    transform: translateX(-10px);
-  }
-  h6 {
-    color: #f2f2f2;
-    cursor: pointer;
-    font-size: 14px;
-  }
 }
 </style>

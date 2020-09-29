@@ -14,7 +14,7 @@
       <div id="div3">3</div>
       <div id="div4">4</div>
     </div>
-    <div class="dashboard" v-if="type == 1">
+    <div class="dashboard" id="list" v-if="type == 1">
       <div class="one-only">
         <main class="main-person" v-for="(item, i) in persons" :key="i">
           <div>{{ keys[0] }} : {{ item.name }}</div>
@@ -153,6 +153,8 @@ export default {
 <style lang="scss">
 #list {
   background: var(--dark);
+  max-height: 100vh;
+  overflow-y: auto;
 }
 .dashboard6,
 .dashboard4 {
@@ -222,7 +224,6 @@ export default {
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 10px;
   background: var(--dark);
-  max-height: 98vw;
   > main {
     background: white;
     height: 200px;

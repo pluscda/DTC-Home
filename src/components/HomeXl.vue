@@ -144,4 +144,26 @@ I've updated your JSFiddle with the solution. */
     background: #bababa;
   }
 }
+.ghost {
+  border: 1px dashed #000;
+  background-color: #fff;
+}
+.custom-drag-ghost {
+  /* The original cloned element must not take place up in the page and must not be visible */
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
+  /* Just for appearance */
+  background-color: #edb458;
+  border: 1px solid #e8871e;
+}
+
+.hidden-drag-ghost {
+  opacity: 0;
+}
+
+.transition {
+  transition: all 2s ease-out 0.5s;
+  top: 0;
+}
 </style>

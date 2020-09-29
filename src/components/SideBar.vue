@@ -47,7 +47,9 @@ export default {
   methods: {},
 
   async mounted() {
-    this.$root.$on("open-sidebar", () => (this.show = true));
+    this.$root.$on("open-sidebar", () => {
+      this.show = true;
+    });
   },
 
   watch: {},

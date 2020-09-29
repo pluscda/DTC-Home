@@ -1,5 +1,7 @@
 <template>
-  <section>
+  <section class="top-section">
+    <SideBar></SideBar>
+    <img class="silderBtn" src="arrow-right.svg" @click="$root.$emit('open-sidebar')" style="cursor:pointer;" />
     <div class="dashboard6" id="list" v-if="type == 6">
       <div id="div1">1</div>
       <div id="div2">2</div>
@@ -31,6 +33,7 @@
 
 <script>
 import mousetrap from "mousetrap";
+import SideBar from "./SideBar";
 import faker from "faker";
 faker.locale = "zh_TW";
 const keys = ["名稱", "出生日期", "年齡", "床號", "病歷號", "入院日期"];
@@ -51,7 +54,7 @@ const persons = new Array(40).fill().map((s, i) => {
 });
 export default {
   name: "home",
-  components: {},
+  components: { SideBar },
   data() {
     return {
       items: ["a", "b", "c", "d"],
@@ -233,5 +236,15 @@ export default {
     padding: 4px;
     border-radius: 10px;
   }
+}
+.top-section {
+  position: relative;
+}
+.silderBtn {
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  top: 12px;
+  opacity: 0.7;
 }
 </style>

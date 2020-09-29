@@ -1,5 +1,5 @@
 <template>
-  <section :class="fullMap ? 'fullmap' : ''">
+  <section>
     <b-sidebar
       width="430px"
       v-model="show"
@@ -40,7 +40,10 @@ export default {
   props: ["map", "showSideBar", "currentCenter", "currentZoom", "item"],
   methods: {},
 
-  async mounted() {},
+  async mounted() {
+    this.$root.$on("open-sidebar", () => (this.show = true));
+  },
+
   watch: {},
 };
 </script>

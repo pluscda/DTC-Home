@@ -237,9 +237,7 @@ export default {
     border-radius: 10px;
   }
 }
-.top-section {
-  position: relative;
-}
+
 .silderBtn {
   position: fixed;
   z-index: 9;

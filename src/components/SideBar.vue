@@ -12,6 +12,12 @@
       aria-expanded="true"
       style="position: relative;"
     >
+      <div class="pl-4">
+        <p>Key F1: 1 畫面</p>
+        <p>Key F4: 4分割畫面</p>
+        <p>Key F6: 6分割畫面</p>
+        <p>Key F8: FullScreen 畫面</p>
+      </div>
     </b-sidebar>
   </section>
 </template>
@@ -48,10 +54,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.chart-dtc {
-  background: white;
-  border-radius: 10px;
-  margin: 1px 7px;
-}
-</style>
+<style lang="scss" scoped></style>

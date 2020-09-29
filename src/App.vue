@@ -1,24 +1,8 @@
 <template>
   <div id="app">
     <router-view />
-    <footer>
-      <main>
-        <h5 style="transform:translateY(10px)">DATACOM TECH.</h5>
-        <nav>
-          <h6>隱私權政策</h6>
-          <div></div>
-          <h6>網站安全政策</h6>
-          <div></div>
-          <h6>使用者條款</h6>
-        </nav>
-        <div
-          style="color:white;transform:translate(20px, -7px);font-size:12px;"
-        >Copyright©2020 DATACOM. All rights reserved.</div>
-      </main>
-    </footer>
   </div>
 </template>
-
 
 <script>
 // @ is an alias to /src
@@ -27,20 +11,19 @@ import DtcXlNavBar from "@/components/DtcXlNavBar.vue";
 export default {
   name: "Home",
   components: {
-    DtcXlNavBar
+    DtcXlNavBar,
   },
-   watch: {
-    '$route' (to, from) {
+  watch: {
+    $route(to, from) {
       window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-    }
-  }
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    },
+  },
 };
 </script>
-
 
 <style lang="scss">
 @import "node_modules/bootstrap/scss/bootstrap";

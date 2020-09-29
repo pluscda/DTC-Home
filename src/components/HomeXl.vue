@@ -1,377 +1,147 @@
 <template>
-  <section class="dtc-home">
-    <DtcXlNavBar v-if="normalNavBar"></DtcXlNavBar>
-    <DtcXlNavWhiteBar v-if="!normalNavBar"></DtcXlNavWhiteBar>
-    <div class="banner-img" ref="myBanner">
-      <img src="main_banner.png" />
-      <main class="banner-title" v-b-visible="visibleHandler">DATACOM TECHNOLOGY CORP.</main>
-    </div>
-    <section class="dna">
-      <img src="home_image/dna.svg" />
-      <nav>
-        <h5>SERVICE ITEMS</h5>
-        <nav class="dna-nav">
-          <h6
-            @click="clickTab(1)"
-            :style="tab == 1 ? 'color:#5D5D5D' : 'color:#8B8B8B; font-size:22px;'"
-          >醫療資訊系統解決方案</h6>
-          <h6
-            @click="clickTab(2)"
-            :style="tab == 2 ? 'color:#5D5D5D' : 'color:#8B8B8B;font-size:22px;'"
-          >資訊設備系統解決方案</h6>
-        </nav>
-        <section class="dna-content" v-if="tab == 1">
-          <div style="padding:40px;" class="ask-1">
-            <div>HIS-醫院資訊系統</div>
-            <div>PACS-影像醫學傳輸系統</div>
-            <div>SRRS-手術記錄報告系統</div>
-            <div>EMR-電子病例管理系統</div>
-            <div>PES-病理檢驗系統</div>
-            <div>LIS-檢驗資訊系統</div>
-            <div>CTPS-癌症管理系統</div>
-          </div>
-          <div style="padding:40px;" class="ask-2">
-            <div>HAS-醫院評鑑系統</div>
-            <div>POC-床邊照護系統</div>
-            <div>MRIS-病歷掃描倉儲系統</div>
-            <div>ADS-血液淨化管理系統</div>
-            <div>IHE-區域醫療平台</div>
-            <div>PHR-基層醫療管理</div>
-            <div>RIS-放射資訊系統</div>
-          </div>
-          <div></div>
-        </section>
-
-        <section class="dna-content dna-tab2" v-if="tab == 2">
-          <div class="a-img">
-            <main style="opacity:0;">
-              <div
-                style="font-size:20px !importnat;"
-              >專業的團隊與豐富的建置及維護經驗,幫您把關系統每一個環節建置穩定的系統,以下為本公司所提供的系統建置與維護項目：</div>
-              <div style="font-size:20px !importnat;">資訊安全系統建置與維護 數位監控系統建置與維護 資訊設備軟體硬體採購</div>
-            </main>
-          </div>
-          <div></div>
-        </section>
-        <footer class="dna-nav-footer">
-          <nav>
-            <div :style="tab == 1 ? 'background:#007AD0':'background:#D0D0D0'" @click="clickTab(1)"></div>
-            <div :style="tab == 2 ? 'background:#007AD0':'background:#D0D0D0'" @click="clickTab(2)"></div>
-          </nav>
-        </footer>
-      </nav>
-    </section>
-    <main class="dtc-clip-path">
-      <News></News>
-      <About style="margin-top:5.5rem;"></About>
-      <Contact style="margin-top:5.5rem;"></Contact>
-    </main>
-  </section>
+  <div class="dashboard6" id="list">
+    <div id="div1">1</div>
+    <div id="div2">2</div>
+    <div id="div3">3</div>
+    <div id="div4">4</div>
+    <div id="div5">5</div>
+    <div id="div6">6</div>
+  </div>
 </template>
 
 <script>
-//焦點訊息
-import DtcXlNavBar from '@/components/DtcXlNavBar.vue';
-import News from '@/components/News.vue';
-import About from '@/components/About.vue';
-import Contact from '@/components/ContactDtc.vue';
-import DtcXlNavWhiteBar from '@/components/DtcXlNavWhiteBar.vue';
-const names = ['醫療資訊系統解決方案', '資訊設備系統解決方案'];
 export default {
-	data() {
-		return {
-			names,
-			tab: 1,
-      normalNavBar: true,
-      timer:'',
-		};
-	},
-	components: {
-		DtcXlNavBar,
-		DtcXlNavWhiteBar,
-		News,
-		About,
-		Contact
-	},
-	methods:{
-    clickTab(n){
-      this.tab = n;
-      clearInterval(this.timer);
-    },
-		visibleHandler(visible){
-      this.normalNavBar = visible;
-      if(!visible){
-        this.$refs.myBanner.classList.add('banner-updated');
-      }else{
-         this.$refs.myBanner.classList.remove('banner-updated');
-      }
-		}
-	},
-  mounted(){
-    this.timer = setInterval(()=> this.tab == 1 ? this.tab = 2 : this.tab = 1, 1000 * 9);
-  }
-};
-</script>
+  name: "home",
+  components: {},
+  data() {
+    return {
+      items: ["a", "b", "c", "d"],
+    };
+  },
+  computed: {
+    isLogin() {},
+  },
+  methods: {},
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-.dtc-home {
-  overflow-x: hidden;
-}
+  async mounted() {
+    function sortable(section, onUpdate) {
+      var dragEl, nextEl, newPos, dragGhost;
 
-.banner-img {
-  display: block;
-  position: relative;
-  //clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
-  transition: all 1s ease-in-out;
-  img {
-    height: 900px;
-    object-fit: cover;
-    width: 100vw;
-  }
-}
-.banner-updated {
-  //clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 82%);
-}
+      let oldPos = [...section.children].map((item) => {
+        item.draggable = true;
+        let pos = document.getElementById(item.id).getBoundingClientRect();
+        return pos;
+      });
 
-.banner-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  right: 0;
-  bottom: 0;
-  transform: translate(-65%, -70%);
-  font-size: 54px;
-  height: 65px;
-  line-height: 65px;
-  width: 842px;
-  color: white;
-}
-.banner-title {
-  margin-top: -65px;
-  &::after {
-    position: absolute;
-    top: 100%;
-    content: "一流的專業團隊、完整的產品線以及豐富醫療產業設備與系統建置經驗,更擁有醫學中心等級得醫療系統開發建置經驗";
-    width: 856px;
-    font-size: 16px;
-    display: block;
-    margin-top: -20px;
-  }
+      function _onDragOver(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = "move";
 
-  &::before {
-    position: absolute;
-    top: 100%;
-    content: " 可依照不同規模醫療等級得院所提供最佳的解決方案。";
-    width: 756px;
-    font-size: 16px;
-    display: block;
-    margin-top: 6px;
-  }
-}
+        var target = e.target;
+        if (target && target !== dragEl && target.nodeName == "DIV") {
+          if (target.classList.contains("inside")) {
+            e.stopPropagation();
+          } else {
+            //getBoundinClientRect contains location-info about the element (relative to the viewport)
+            var targetPos = target.getBoundingClientRect();
+            //checking that dragEl is dragged over half the target y-axis or x-axis. (therefor the .5)
+            var next = (e.clientY - targetPos.top) / (targetPos.bottom - targetPos.top) > 0.5 || (e.clientX - targetPos.left) / (targetPos.right - targetPos.left) > 0.5;
 
-.dna {
-  position: relative;
-  width: 100vw;
-  display: grid;
-  place-items: center;
-  margin-top: 5rem;
-  nav > main {
-    margin: 0 auto;
-    position: relative;
-    display: grid;
-    place-items: center;
-    min-width: 100vh;
-    margin-top: 3rem;
-  }
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 670px;
-    height: 750px;
-  }
-  h5 {
-    width: 1240px;
-    font-size: 40px;
-    color: #3d63cb;
-    font-weight: bold;
-    position: relative;
-    padding-left: 14px;
-    &::before,
-    &::after {
-      position: absolute;
-      content: "";
-      left: 1px;
-      top: 7px;
-      width: 4px;
-      background: #3d63cb;
-      height: 79px;
-      font-size: 40px;
-    }
-    &::after {
-      content: "服務項目";
-      font-weight: bold;
-      top: 100%;
-      width: 200px;
-      background: none;
-      display: block;
-      margin-left: 1rem;
-      color: #5d5d5d;
-      font-size: 34px;
-    }
-  }
-}
+            section.insertBefore(dragEl, (next && target.nextSibling) || target);
 
-.dna-nav {
-  display: grid;
-  padding-left: 2px;
-  width: 1240px;
-  grid-template-columns: repeat(2, max-content);
-  gap: 1rem;
-  padding-top: 4rem;
-
-  h6 {
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 1.1px;
-    cursor: pointer;
-    z-index: 99;
-  }
-}
-.dna-nav-footer {
-  display: grid;
-  background: transparent;
-  width: 1240px;
-  place-items: center;
-  nav {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    gap: 1rem;
-    transform: translateY(100px);
-    > div {
-      width: 91px;
-      height: 3px;
-      cursor: pointer;
-    }
-  }
-}
-.dna-content {
-  margin-left: 3px;
-  width: 1240px;
-  color: black;
-  height: 320px;
-  display: grid;
-  background: white;
-  grid-template-columns: repeat(2, 305px) 630px;
-  //@warngap: 1rem;
-  position: relative;
-  z-index: 2;
-  margin-top: 1rem;
-  > div {
-    padding: 0px 60px;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: end;
-    z-index: 2;
-    order: 1;
-    background: white;
-  }
-  > div:last-child {
-    background: url("/home_image/healthcare.png") no-repeat center center;
-    background-size: 630px 400px;
-    border-radius: none !important;
-    order: 2;
-    transform: translate3d(-30px, -140px, 0);
-    z-index: 1;
-  }
-  &::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    display: block;
-    z-index: 1;
-    width: 610px;
-    height: 305px;
-    box-shadow: 0px 15px 16px #00000029;
-  }
-}
-
-.dna-tab2 {
-  grid-template-columns: 610px 630px;
-  > div:first-child {
-    display: grid;
-    place-items: center;
-    font-size: 20px;
-  }
-  > div:last-child {
-    background: url("/home_image/fix.png") no-repeat center center;
-  }
-}
-
-.ask-1 {
-  > div {
-    transform: translateX(30px);
-  }
-}
-.ask-2 {
-  > div {
-    transform: translateX(-15px);
-  }
-}
-.a-img {
-  background: url(/home_image/text2.png) no-repeat center center !important;
-  background-size: 610px 320px !important;
-}
-
-.dtc-clip-path {
-  clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
-  height: 2021px;
-  width: 100vw;
-  background: #f7f7f7;
-  transform: translateY(170px);
-  > footer {
-    height: 90px;
-    background: #242424;
-    display: grid;
-    place-items: center;
-
-    main {
-      width: 288px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 5px;
-      > div:last-child {
-        font-size: 13px;
-      }
-      nav {
-        display: grid;
-        grid-template-columns: max-content 1px max-content 1px max-content;
-        gap: 1rem;
-        > div {
-          background: white;
-          height: 70%;
+            /*  console.log("oldPos:" + JSON.stringify(oldPos));
+             console.log("newPos:" + JSON.stringify(newPos)); */
+            /* console.log(newPos.top === oldPos.top ? 'They are the same' : 'Not the same'); */
+            console.log(oldPos);
+          }
         }
       }
+
+      function _onDragEnd(evt) {
+        evt.preventDefault();
+        newPos = [...section.children].map((child) => {
+          let pos = document.getElementById(child.id).getBoundingClientRect();
+          return pos;
+        });
+        console.log(newPos);
+        dragEl.classList.remove("ghost");
+        section.removeEventListener("dragover", _onDragOver, false);
+        section.removeEventListener("dragend", _onDragEnd, false);
+
+        nextEl !== dragEl.nextSibling ? onUpdate(dragEl) : false;
+      }
+
+      section.addEventListener("dragstart", function(e) {
+        dragEl = e.target;
+        nextEl = dragEl.nextSibling;
+        /* dragGhost = dragEl.cloneNode(true);
+        dragGhost.classList.add('hidden-drag-ghost'); */
+
+        /*  document.body.appendChild(dragGhost);
+        e.dataTransfer.setDragImage(dragGhost, 0, 0); */
+
+        e.dataTransfer.effectAllowed = "move";
+        e.dataTransfer.setData("Text", dragEl.textContent);
+
+        section.addEventListener("dragover", _onDragOver, false);
+        section.addEventListener("dragend", _onDragEnd, false);
+
+        setTimeout(function() {
+          dragEl.classList.add("ghost");
+        }, 0);
+      });
     }
-    h5 {
-      color: #cecece;
-      font-size: 18px;
-      text-align: center;
-      transform: translateX(-10px);
-    }
-    h6 {
-      color: #f2f2f2;
-      cursor: pointer;
-      font-size: 14px;
-    }
-  }
+
+    sortable(document.getElementById("list"), function(item) {
+      /* console.log(item); */
+    });
+  },
+  async beforeCreate() {},
+};
+
+/* still in progress */
+
+/* The setData() method is used to add an item to the drag data, as shown in the following example.
+
+function dragstart_handler(ev) {
+  // Add the drag data
+  ev.dataTransfer.setData("text/plain", ev.target.id);
+  ev.dataTransfer.setData("text/html", "<p>Example paragraph</p>");
+  ev.dataTransfer.setData("text/uri-list", "http://developer.mozilla.org"); */
+
+/* you may succeed this a hacky solution. The native draggability doesn't allow CSS styles like: opacity:0;, visibility:hidden or display:none.
+But you can do it using: transform:translateX(-9999px).
+I've updated your JSFiddle with the solution. */
+</script>
+
+<style lang="scss">
+#list {
+  background: var(--dark);
 }
-.ask-1,
-.ask-2 {
-  font-size: 20px;
-  color: #434343;
+.dashboard6,
+.dashboard4,
+.dashboard1 {
+  margin: 0px;
+  padding: 10px;
+  list-style: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: row dense;
+  min-height: 100vh;
+  max-height: 100vh;
+  text-align: center;
+
+  > div {
+    cursor: move;
+    border: 1px solid black;
+    font-size: 24px;
+    color: black;
+    background: #bababa;
+  }
 }
 </style>

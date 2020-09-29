@@ -36,7 +36,9 @@ Vue.use(VueMousetrap);
 Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
+import Grid from 'vue-js-grid'
 
+Vue.use(Grid);
 
 Vue.config.productionTip = false;
 ``

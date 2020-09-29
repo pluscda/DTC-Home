@@ -14,21 +14,50 @@
       <div id="div3">3</div>
       <div id="div4">4</div>
     </div>
-    <div class="dashboard" id="list" v-if="type == 1">
-      <div id="div1">1</div>
+    <div class="dashboard" v-if="type == 1">
+      <div class="one-only">
+        <main class="main-person" v-for="(item, i) in persons" :key="i">
+          <div>{{ keys[0] }} : {{ item.name }}</div>
+          <div>{{ keys[1] }} : {{ item.birthday }}</div>
+          <div>{{ keys[2] }} : {{ item.age }}</div>
+          <div>{{ keys[3] }} : {{ item.bedNo }}</div>
+          <div>{{ keys[4] }} : {{ item.id }}</div>
+          <div>{{ keys[5] }} : {{ item.enrollDate }}</div>
+        </main>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 import mousetrap from "mousetrap";
+import faker from "faker";
+faker.locale = "zh_TW";
+const keys = ["名稱", "出生日期", "年齡", "床號", "病歷號", "入院日期"];
+const persons = new Array(40).fill().map((s, i) => {
+  var dob = faker.date.past(50, new Date("Sat Sep 20 1992 21:35:02 GMT+0200 (CEST)"));
+  dob = dob.getFullYear() + "-" + (dob.getMonth() + 1) + "-" + dob.getDate(); // First month is "1"
+  var dob2 = faker.date.past(2, new Date("Sat Sep 20 2020 21:35:02 GMT+0200 (CEST)"));
+  dob2 = dob2.getFullYear() + "-" + (dob2.getMonth() + 1) + "-" + dob2.getDate(); // First month is "1"
+  let obj = {
+    name: faker.name.findName(),
+    birthday: dob,
+    age: i + 1,
+    bedNo: Date.now(),
+    id: faker.phone.phoneNumber().split("-")[1],
+    enrollDate: dob2,
+  };
+  return obj;
+});
 export default {
   name: "home",
   components: {},
   data() {
     return {
       items: ["a", "b", "c", "d"],
-      type: 6,
+      type: 1,
+      persons,
+      keys,
     };
   },
   computed: {
@@ -103,7 +132,7 @@ export default {
   },
 
   async mounted() {
-    this.enableDnD();
+    //this.enableDnD();
     mousetrap.bind("f4", () => {
       this.type = 4;
       requestAnimationFrame(() => this.enableDnD());
@@ -126,8 +155,7 @@ export default {
   background: var(--dark);
 }
 .dashboard6,
-.dashboard4,
-.dashboard {
+.dashboard4 {
   margin: 0px;
   padding: 10px;
   list-style: none;
@@ -157,16 +185,6 @@ export default {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.dashboard {
-  grid-template-columns: repeat(1, 1fr);
-  padding: 0;
-  margin: 0;
-  grid-gap: 0px;
-  > div {
-    height: 100vh;
-    border: none;
-  }
-}
 .ghost {
   border: 1px dashed #000;
   background-color: #fff;
@@ -188,5 +206,31 @@ export default {
 .transition {
   transition: all 2s ease-out 0.5s;
   top: 0;
+}
+
+.dashboard {
+  height: 100vh;
+  .one-only {
+    border: none;
+    border-radius: 0;
+    color: black;
+  }
+}
+.one-only {
+  display: grid;
+  padding: 10px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  background: var(--dark);
+  max-height: 98vw;
+  > main {
+    background: white;
+    height: 200px;
+    font-size: 1rem;
+    border: 1px solid black;
+    color: var(--dark);
+    padding: 4px;
+    border-radius: 10px;
+  }
 }
 </style>

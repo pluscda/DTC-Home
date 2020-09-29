@@ -44,7 +44,7 @@ export default {
   color: white;
   overflow-x: hidden;
   > * {
-    overflow-y: hidden !important;
+    //overflow-y: hidden !important;
   }
 }
 

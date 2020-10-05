@@ -36,7 +36,7 @@
           </main>
         </nav>
         <img :src="item" v-show="i != 1" />
-        <img src="DC-200-1.png" v-if="pacsSelected == 1" />
+        <img src="DC-200-1.png" v-if="pacsName == 'DC-200'" />
       </main>
     </div>
   </section>
@@ -74,15 +74,16 @@ export default {
   components: {
     DtcXlNavWhiteBar,
   },
+  computed: {
+    pacsName() {
+      const arr = [...pacsPros1, ...pacsPros2];
+      return this.activeIdx == 1 ? arr[this.pacsSelected] : "";
+    },
+  },
   methods: {
     update(name) {
       const arr = [...pacsPros1, ...pacsPros2];
       this.pacsSelected = arr.findIndex((s) => s == name);
-      // alert(this.pacsSelected);
-      switch (arr[this.pacsSelected]) {
-        case "DTC-200":
-          break;
-      }
     },
   },
   watch: {

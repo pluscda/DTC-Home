@@ -36,7 +36,7 @@
           </main>
         </nav>
         <img :src="item" v-show="i != 1" />
-        <img src="DC-200.png" v-if="pacsSelected == 1" />
+        <img src="DC-200-1.png" v-if="pacsSelected == 1" />
       </main>
     </div>
   </section>

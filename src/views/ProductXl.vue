@@ -15,23 +15,13 @@
     </div>
     <div class="dtc-body">
       <nav>
-        <div
-          @click="activeIdx = i"
-          :class="i == activeIdx ? 'active-nav-dtc' : ''"
-          v-for="(item, i) in names"
-          :key="i"
-        >{{ item }}</div>
+        <div @click="activeIdx = i" :class="i == activeIdx ? 'active-nav-dtc' : ''" v-for="(item, i) in names" :key="i">{{ item }}</div>
       </nav>
       <main v-for="(item, i) in imgs" :key="i" v-show="i == activeIdx">
         <nav v-if="i == 1" style="margin-left:50px;">
           <h5 class="prods">產品型號</h5>
           <main class="grid-7">
-            <div
-              @click="update(item)"
-              v-for="(item, t) in pacsPros1"
-              :key="t"
-              :style="pacsSelected == t ? 'color:#3D63CB' : ''"
-            >{{ item }}</div>
+            <div @click="update(item)" v-for="(item, t) in pacsPros1" :key="t" :style="pacsSelected == t ? 'color:#3D63CB' : ''">{{ item }}</div>
           </main>
           <main class="grid-7">
             <div
@@ -40,10 +30,13 @@
               v-for="(item, k) in pacsPros2"
               :key="k"
               :style="pacsSelected == k + 7 ? 'color:#3D63CB' : ''"
-            >{{ item }}</div>
+            >
+              {{ item }}
+            </div>
           </main>
         </nav>
-        <img :src="item" />
+        <img :src="item" v-show="i != 1" />
+        <img src="DC-200.png" v-if="pacsSelected == 1" />
       </main>
     </div>
   </section>
@@ -65,24 +58,8 @@ const imgs = [
   "//unsplash.it/890/1094?image=8",
   "//unsplash.it/890/1094?image=9",
 ];
-const pacsPros1 = [
-  "DC-100",
-  "DC-200",
-  "DC-300",
-  "DC-500",
-  "DC-600",
-  "DC-700",
-  "",
-];
-const pacsPros2 = [
-  "DC-900",
-  "DC-1000",
-  "DC-810",
-  "DC-830",
-  "DC-1800",
-  "Dicom Dir",
-  "ImageCore",
-];
+const pacsPros1 = ["DC-100", "DC-200", "DC-300", "DC-500", "DC-600", "DC-700", ""];
+const pacsPros2 = ["DC-900", "DC-1000", "DC-810", "DC-830", "DC-1800", "Dicom Dir", "ImageCore"];
 export default {
   data() {
     return {
@@ -101,6 +78,11 @@ export default {
     update(name) {
       const arr = [...pacsPros1, ...pacsPros2];
       this.pacsSelected = arr.findIndex((s) => s == name);
+      // alert(this.pacsSelected);
+      switch (arr[this.pacsSelected]) {
+        case "DTC-200":
+          break;
+      }
     },
   },
   watch: {

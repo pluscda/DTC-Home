@@ -35,7 +35,7 @@
             </div>
           </main>
         </nav>
-        <img :src="item" v-show="i != 1" />
+        <img :src="item" v-if="i != 1" />
         <img src="DC-200-1.png" v-if="pacsName == 'DC-200'" />
       </main>
     </div>

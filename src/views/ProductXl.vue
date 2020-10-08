@@ -36,7 +36,13 @@
           </main>
         </nav>
         <img :src="item" v-if="i != 1" />
-        <img src="DC-200-1.png" v-if="pacsName == 'DC-200'" />
+        <img src="DC-200.png" v-if="pacsName == 'DC-200'" />
+        <img src="DC-300.png" v-if="pacsName == 'DC-300'" />
+        <img src="DC-500.png" v-if="pacsName == 'DC-500'" />
+        <img src="DC-600.png" v-if="pacsName == 'DC-600'" />
+        <img src="DC-810.png" v-if="pacsName == 'DC-810'" />
+        <img src="DC-1800.png" v-if="pacsName == 'DC-1800'" />
+        <img src="DICOM0-DIR.png" v-if="pacsName == 'Dicom Dir'" />
       </main>
     </div>
   </section>
@@ -59,7 +65,7 @@ const imgs = [
   "//unsplash.it/890/1094?image=9",
 ];
 const pacsPros1 = ["DC-100", "DC-200", "DC-300", "DC-500", "DC-600", "DC-700", ""];
-const pacsPros2 = ["DC-900", "DC-1000", "DC-810", "DC-830", "DC-1800", "Dicom Dir", "ImageCore"];
+const pacsPros2 = ["DC-810", "DC-830", "DC-1800", "Dicom Dir", "ImageCore"];
 export default {
   data() {
     return {

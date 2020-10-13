@@ -66,7 +66,7 @@ const imgs = [
   "//unsplash.it/890/1094?image=8",
   "//unsplash.it/890/1094?image=9",
 ];
-const pacsPros1 = ["DC-100", "DC-200", "DC-300", "DC-500", "DC-600", "DC-700", ""];
+const pacsPros1 = ["DC-100", "DC-200", "DC-300", "DC-500", "DC-600", "DC-700"];
 const pacsPros2 = ["DC-810", "DC-830", "DC-1800", "Dicom Dir"];
 export default {
   data() {

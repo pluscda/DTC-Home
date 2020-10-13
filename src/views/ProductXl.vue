@@ -42,6 +42,7 @@
         <img src="DC-600.png" v-if="pacsName == 'DC-600'" />
         <img src="DC-700.png" v-if="pacsName == 'DC-700'" />
         <img src="DC-810.png" v-if="pacsName == 'DC-810'" />
+        <img src="DC-830.png" v-if="pacsName == 'DC-830'" />
         <img src="DC-1800.png" v-if="pacsName == 'DC-1800'" />
         <img src="DICOM0-DIR.png" v-if="pacsName == 'Dicom Dir'" />
       </main>

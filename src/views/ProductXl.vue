@@ -36,6 +36,7 @@
           </main>
         </nav>
         <img :src="item" v-if="i != 1" />
+        <img src="DC-100.png" v-if="pacsName == 'DC-100'" />
         <img src="DC-200.png" v-if="pacsName == 'DC-200'" />
         <img src="DC-300.png" v-if="pacsName == 'DC-300'" />
         <img src="DC-500.png" v-if="pacsName == 'DC-500'" />

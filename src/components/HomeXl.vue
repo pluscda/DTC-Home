@@ -25,7 +25,7 @@
             <div>HIS-醫院資訊系統</div>
             <div>PACS-影像醫學傳輸系統</div>
             <div>SRRS-手術記錄報告系統</div>
-            <div>EMR-電子病例管理系統</div>
+            <div>EMR-電子病歷管理系統</div>
             <div>PES-病理檢驗系統</div>
             <div>LIS-檢驗資訊系統</div>
             <div>CTPS-癌症管理系統</div>

@@ -53,7 +53,7 @@
 
 <script>
 import DtcXlNavWhiteBar from "@/components/DtcXlNavWhiteBar.vue";
-const dummy = `RIS-放射資訊系統 PACS-影像醫學傳輸系統 HIS-醫院資訊系統 SRRS-手術記錄報告系統 EMR-電子病例管理系統 PES-病理檢驗系統 LIS-檢驗資訊系統 CTPS-癌症管理系統 MRIS-病歷掃描倉儲系統 ADS-血液淨化管理系統`;
+const dummy = `RIS-放射資訊系統 PACS-影像醫學傳輸系統 HIS-醫院資訊系統 SRRS-手術記錄報告系統 EMR-電子病歷管理系統 PES-病理檢驗系統 LIS-檢驗資訊系統 CTPS-癌症管理系統 MRIS-病歷掃描倉儲系統 ADS-血液淨化管理系統`;
 const names = dummy.split(" ");
 const imgs = [
   "ris_content.png",

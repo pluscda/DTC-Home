@@ -2,7 +2,7 @@
   <section class="dtc-home">
     <DtcXlNavBar v-if="normalNavBar"></DtcXlNavBar>
     <DtcXlNavWhiteBar v-if="!normalNavBar"></DtcXlNavWhiteBar>
-    <div class="banner-img" ref="myBanner">
+    <div class="banner-img" ref="myBanner" @click="$router.push('contact')">
       <img src="main_banner.png" />
      
     </div>
@@ -121,6 +121,7 @@ export default {
 
 .banner-img {
   display: block;
+  cursor: pointer;
   position: relative;
   //clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
   transition: all 1s ease-in-out;

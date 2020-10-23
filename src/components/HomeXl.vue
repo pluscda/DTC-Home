@@ -4,7 +4,7 @@
     <DtcXlNavWhiteBar v-if="!normalNavBar"></DtcXlNavWhiteBar>
     <div class="banner-img" ref="myBanner">
       <img src="main_banner.png" />
-      <main class="banner-title" v-b-visible="visibleHandler">DATACOM TECHNOLOGY CORP.</main>
+     
     </div>
     <section class="dna">
       <img src="home_image/dna.svg" />

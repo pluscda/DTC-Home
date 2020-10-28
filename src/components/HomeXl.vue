@@ -4,7 +4,6 @@
     <DtcXlNavWhiteBar v-if="!normalNavBar"></DtcXlNavWhiteBar>
     <div class="banner-img" ref="myBanner" @click="$router.push('contact')">
       <img src="main_banner.png" />
-     
     </div>
     <section class="dna">
       <img src="home_image/dna.svg" />

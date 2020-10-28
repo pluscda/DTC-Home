@@ -62,9 +62,9 @@ const imgs = [
   "2020-09-15 09.29.55.jpg",
   "2020-09-15 09.29.30.jpg",
   "pes_content.png",
-  "//unsplash.it/890/1094?image=6",
-  "//unsplash.it/890/1094?image=7",
-  "//unsplash.it/890/1094?image=8",
+  "lis_content.png",
+  "ctps_content.png",
+  "mris_content.png",
   "ads_content.png",
 ];
 const pacsPros1 = ["DC-100", "DC-200", "DC-300", "DC-500", "DC-600", "DC-700", ""];

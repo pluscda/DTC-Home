@@ -125,6 +125,7 @@ footer {
   place-items: center;
   z-index: 9999999999;
   > div {
+    z-index: 99999999999;
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -133,7 +134,6 @@ footer {
     position: relative;
     img {
       display: block;
-      z-index: 99999999999;
     }
     .my-close {
       cursor: pointer;

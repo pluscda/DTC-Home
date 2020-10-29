@@ -372,7 +372,7 @@ export default {
   position: absolute;
   top: 70px;
   left: 30px;
-  display: black;
+  display: block;
   width: 1px;
   height: 1px;
   opacity: 0;

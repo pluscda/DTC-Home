@@ -12,13 +12,13 @@
         <div style="color:white;transform:translate(20px, -7px);font-size:12px;">Copyright©2020 DATACOM. All rights reserved.</div>
       </main>
     </footer>
-    <aside v-show="showPrivacy" class="my-term">
+    <aside v-if="showPrivacy" class="my-term">
       <div @click="showPrivacy = false">
         <span class="my-close"><i class="fas fa-times-circle"></i></span>
         <img src="privacy.png" />
       </div>
     </aside>
-    <aside v-show="showTerm" class="my-term" @click="showTerm = false">
+    <aside v-if="showTerm" class="my-term" @click="showTerm = false">
       <div @click="showTerm = false">
         <span class="my-close"><i class="fas fa-times-circle"></i></span>
         <img src="term.png" />
@@ -130,8 +130,8 @@ footer {
     height: 100vh;
     display: grid;
     place-items: center;
-    overflow-y: auto;
     position: relative;
+    overflow-y: auto;
     img {
       display: block;
     }

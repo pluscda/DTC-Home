@@ -120,10 +120,11 @@ footer {
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(#fff, 0.95);
+  background: rgba(#fff, 0.8);
   z-index: 9999999999;
   > div {
     z-index: 99999999999;
+    background: rgba(#fff, 0.7);
     width: 100vw;
     height: 100vh;
     display: grid;

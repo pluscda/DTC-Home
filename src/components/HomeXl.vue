@@ -1,5 +1,6 @@
 <template>
   <section class="dtc-home">
+    <span class="one-dot" v-b-visible="visibleHandler"></span>
     <DtcXlNavBar v-if="normalNavBar"></DtcXlNavBar>
     <DtcXlNavWhiteBar v-if="!normalNavBar"></DtcXlNavWhiteBar>
     <div class="banner-img" ref="myBanner" @click="$router.push('contact')">
@@ -10,14 +11,8 @@
       <nav>
         <h5>SERVICE ITEMS</h5>
         <nav class="dna-nav">
-          <h6
-            @click="clickTab(1)"
-            :style="tab == 1 ? 'color:#5D5D5D' : 'color:#8B8B8B; font-size:22px;'"
-          >醫療資訊系統解決方案</h6>
-          <h6
-            @click="clickTab(2)"
-            :style="tab == 2 ? 'color:#5D5D5D' : 'color:#8B8B8B;font-size:22px;'"
-          >資訊設備系統解決方案</h6>
+          <h6 @click="clickTab(1)" :style="tab == 1 ? 'color:#5D5D5D' : 'color:#8B8B8B; font-size:22px;'">醫療資訊系統解決方案</h6>
+          <h6 @click="clickTab(2)" :style="tab == 2 ? 'color:#5D5D5D' : 'color:#8B8B8B;font-size:22px;'">資訊設備系統解決方案</h6>
         </nav>
         <section class="dna-content" v-if="tab == 1">
           <div style="padding:40px;" class="ask-1">
@@ -44,9 +39,7 @@
         <section class="dna-content dna-tab2" v-if="tab == 2">
           <div class="a-img">
             <main style="opacity:0;">
-              <div
-                style="font-size:20px !importnat;"
-              >專業的團隊與豐富的建置及維護經驗,幫您把關系統每一個環節建置穩定的系統,以下為本公司所提供的系統建置與維護項目：</div>
+              <div style="font-size:20px !importnat;">專業的團隊與豐富的建置及維護經驗,幫您把關系統每一個環節建置穩定的系統,以下為本公司所提供的系統建置與維護項目：</div>
               <div style="font-size:20px !importnat;">資訊安全系統建置與維護 數位監控系統建置與維護 資訊設備軟體硬體採購</div>
             </main>
           </div>
@@ -54,8 +47,8 @@
         </section>
         <footer class="dna-nav-footer">
           <nav>
-            <div :style="tab == 1 ? 'background:#007AD0':'background:#D0D0D0'" @click="clickTab(1)"></div>
-            <div :style="tab == 2 ? 'background:#007AD0':'background:#D0D0D0'" @click="clickTab(2)"></div>
+            <div :style="tab == 1 ? 'background:#007AD0' : 'background:#D0D0D0'" @click="clickTab(1)"></div>
+            <div :style="tab == 2 ? 'background:#007AD0' : 'background:#D0D0D0'" @click="clickTab(2)"></div>
           </nav>
         </footer>
       </nav>
@@ -70,45 +63,45 @@
 
 <script>
 //焦點訊息
-import DtcXlNavBar from '@/components/DtcXlNavBar.vue';
-import News from '@/components/News.vue';
-import About from '@/components/About.vue';
-import Contact from '@/components/ContactDtc.vue';
-import DtcXlNavWhiteBar from '@/components/DtcXlNavWhiteBar.vue';
-const names = ['醫療資訊系統解決方案', '資訊設備系統解決方案'];
+import DtcXlNavBar from "@/components/DtcXlNavBar.vue";
+import News from "@/components/News.vue";
+import About from "@/components/About.vue";
+import Contact from "@/components/ContactDtc.vue";
+import DtcXlNavWhiteBar from "@/components/DtcXlNavWhiteBar.vue";
+const names = ["醫療資訊系統解決方案", "資訊設備系統解決方案"];
 export default {
-	data() {
-		return {
-			names,
-			tab: 1,
+  data() {
+    return {
+      names,
+      tab: 1,
       normalNavBar: true,
-      timer:'',
-		};
-	},
-	components: {
-		DtcXlNavBar,
-		DtcXlNavWhiteBar,
-		News,
-		About,
-		Contact
-	},
-	methods:{
-    clickTab(n){
+      timer: "",
+    };
+  },
+  components: {
+    DtcXlNavBar,
+    DtcXlNavWhiteBar,
+    News,
+    About,
+    Contact,
+  },
+  methods: {
+    clickTab(n) {
       this.tab = n;
       clearInterval(this.timer);
     },
-		visibleHandler(visible){
+    visibleHandler(visible) {
       this.normalNavBar = visible;
-      if(!visible){
-        this.$refs.myBanner.classList.add('banner-updated');
-      }else{
-         this.$refs.myBanner.classList.remove('banner-updated');
+      if (!visible) {
+        this.$refs.myBanner.classList.add("banner-updated");
+      } else {
+        this.$refs.myBanner.classList.remove("banner-updated");
       }
-		}
-	},
-  mounted(){
-    this.timer = setInterval(()=> this.tab == 1 ? this.tab = 2 : this.tab = 1, 1000 * 9);
-  }
+    },
+  },
+  mounted() {
+    this.timer = setInterval(() => (this.tab == 1 ? (this.tab = 2) : (this.tab = 1)), 1000 * 9);
+  },
 };
 </script>
 
@@ -116,6 +109,7 @@ export default {
 <style scoped lang="scss">
 .dtc-home {
   overflow-x: hidden;
+  position: relative;
 }
 
 .banner-img {
@@ -373,5 +367,14 @@ export default {
 .ask-2 {
   font-size: 20px;
   color: #434343;
+}
+.one-dot {
+  position: absolute;
+  top: 70px;
+  left: 30px;
+  display: black;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
 }
 </style>

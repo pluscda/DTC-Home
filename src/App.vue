@@ -1,7 +1,7 @@
 <template>
   <div id="app" :style="showPrivacy || showTerm ? 'overflow:hidden !important;' : ''">
     <router-view />
-    <footer>
+    <footer v-show="!showPrivacy && !showTerm">
       <main>
         <h5 style="transform:translate(-15px,8px) !important;">DATACOM TECH</h5>
         <nav>

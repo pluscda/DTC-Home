@@ -3,7 +3,7 @@
     <router-view />
     <footer>
       <main>
-        <h5 style="transform:translate(-18px,8px) !important;">DATACOM TECH</h5>
+        <h5 style="transform:translate(-15px,8px) !important;">DATACOM TECH</h5>
         <nav>
           <h6 @click="showPrivacy = true" style="transform:translateX(15px)">隱私權政策</h6>
           <div style="transform:translateX(15px)"></div>
@@ -134,7 +134,7 @@ footer {
     img {
       display: block;
       z-index: 99999999999;
-      height: 1806px;
+      min-height: 1806px;
     }
     .my-close {
       cursor: pointer;

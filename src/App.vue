@@ -13,14 +13,14 @@
       </main>
     </footer>
     <aside v-if="showPrivacy" class="my-term">
-      <div>
-        <span @click="showPrivacy = false" class="my-close"><i class="fas fa-times-circle"></i></span>
+      <div @click="showPrivacy = false">
+        <span class="my-close"><i class="fas fa-times-circle"></i></span>
         <img src="privacy.png" />
       </div>
     </aside>
-    <aside v-if="showTerm" class="my-term">
-      <div>
-        <span @click="showTerm = false" class="my-close"><i class="fas fa-times-circle"></i></span>
+    <aside v-if="showTerm" class="my-term" @click="showTerm = false">
+      <div @click="showTerm = false">
+        <span class="my-close"><i class="fas fa-times-circle"></i></span>
         <img src="term.png" />
       </div>
     </aside>
@@ -134,7 +134,6 @@ footer {
     img {
       display: block;
       z-index: 99999999999;
-      min-height: 1806px;
     }
     .my-close {
       cursor: pointer;

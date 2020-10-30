@@ -4,7 +4,8 @@
     <DtcXlNavBar v-if="normalNavBar"></DtcXlNavBar>
     <DtcXlNavWhiteBar v-if="!normalNavBar"></DtcXlNavWhiteBar>
     <div class="banner-img" ref="myBanner" @click="$router.push('contact')">
-      <img src="main_banner.png" />
+      <img src="main_left.png" />
+      <!-- <img src="main_right.png" class="dtc-b-2" /> -->
     </div>
     <section class="dna">
       <img src="home_image/dna.svg" />
@@ -113,19 +114,24 @@ export default {
 }
 
 .banner-img {
-  display: block;
+  display: grid;
+  height: 900px;
   cursor: pointer;
   position: relative;
-  //clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+  gap: 0px;
   transition: all 1s ease-in-out;
-  img {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: block;
+    z-index: 3px;
+    background: url("/main_right.png") no-repeat top left;
+    background-size: cover;
     height: 900px;
-    object-fit: cover;
-    width: 100vw;
+    width: 738px;
   }
-}
-.banner-updated {
-  //clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 82%);
 }
 
 .banner-title {

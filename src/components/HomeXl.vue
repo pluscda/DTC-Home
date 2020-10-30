@@ -120,6 +120,12 @@ export default {
   position: relative;
   gap: 0px;
   transition: all 1s ease-in-out;
+  > img {
+    object-fit: cover;
+    width: 100vw;
+    height: 900px;
+    display: block;
+  }
   &::after {
     content: "";
     position: absolute;

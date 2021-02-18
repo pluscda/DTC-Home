@@ -1,5 +1,4 @@
 import Vue from "vue";
-
 import "jschannel";
 import App from "./App.vue";
 import router from "./router";
@@ -15,31 +14,23 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import moment from "moment";
-Vue.use(contenteditable);
 import VueTabs from 'vue-nav-tabs'
 import 'vue-nav-tabs/themes/vue-tabs.css'
-Vue.use(VueTabs)
-
 import VueClipboard from 'vue-clipboard2'
-Vue.use(VueClipboard)
 import Vlf from 'vlf'
 import localforage from 'localforage'
-Vue.use(Vlf, localforage)
-
 import ToggleButton from 'vue-js-toggle-button'
-
-Vue.use(ToggleButton)
-
 import VueMousetrap from 'vue-mousetrap'
+
+Vue.use(Vlf, localforage)
+Vue.use(contenteditable);
+Vue.use(VueTabs)
+Vue.use(VueClipboard)
+Vue.use(ToggleButton)
 Vue.use(VueMousetrap);
-// Install BootstrapVue
 Vue.use(BootstrapVue);
-// Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
-
-
 Vue.config.productionTip = false;
-``
 /* eslint-disable no-new */
 new Vue({
   router,

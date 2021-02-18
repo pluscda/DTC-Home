@@ -28,9 +28,8 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import DtcXlNavBar from "@/components/DtcXlNavBar.vue";
-
+import { mapMutations, mapState } from "vuex";
 export default {
   name: "Home",
   components: {
@@ -41,6 +40,22 @@ export default {
       showPrivacy: false,
       showTerm: false,
     };
+  },
+  computed: {
+    ...mapState(["isMobile"])
+  },
+  mounted () {
+    this.detectDevice();
+    window.addEventListener('resize', this.detectDevice);
+  },
+  methods: {
+    ...mapMutations(["m_setIsMobile"]),
+    detectDevice () {
+      const userAgentIsMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const screenIsMobile = document.documentElement.clientWidth < 768;
+      this.m_setIsMobile(userAgentIsMobile || screenIsMobile);
+      if (this.$route.name === 'Home' && this.isMobile) this.$router.push({ name: 'HomeMobile' })
+    }
   },
   watch: {
     $route(to, from) {

@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomeXl from "@/components/HomeXl.vue";
+import Home from "@/views/Home.vue";
 
 Vue.use(VueRouter);
 
@@ -8,12 +8,16 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: HomeXl,
+    component: Home,
   },
   {
     path: "/home",
-    name: "Home2",
-    component: HomeXl,
+    redirect: { name: 'Home' }
+  },
+  {
+    path: "/homeMobile",
+    name: "HomeMobile",
+    component: () => import("../views/HomeMobile.vue"),
   },
   {
     path: "/about",
@@ -58,5 +62,9 @@ const routes = [
 const router = new VueRouter({
   routes,
 });
+
+router.beforeEach((to, from, next) => {
+  next()
+})
 
 export default router;

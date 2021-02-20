@@ -1,0 +1,176 @@
+<template>
+  <div class="p-4">
+
+    <dtc-title main="SERVICE" sub="服務項目" />
+
+    <div class="service-content mt-2 mb-4">
+
+      <div v-if="serviceIndex===0" class="item d-flex align-items-start">
+        <ul class="d-grid solutions flex-grow-1">
+          <li v-for="solution in solutions" :key="solution" v-text="solution" class="pt-1" />
+        </ul>
+        <div class="position-relative pr-1" style="grid-row: span 4; width: 40vw;">
+          <b-img src="homeMobile_image/fix.jpg" class="w-100" style="grid-row: span 4" />
+          <div class="position-absolute absolute-full sysmtem-data d-flex align-items-center justify-content-center">
+              <div class="py-2 px-1">
+                醫療資訊系統<br />解決方案
+              </div>
+            </div>    
+        </div>
+      </div>
+
+      <div v-if="serviceIndex===1" class="item d-flex align-items-start">
+        <div class="d-grid systems flex-grow-1">
+          <div class="position-relative pr-1" style="grid-row: span 4">
+            <b-img src="homeMobile_image/healthcare.jpg" class="w-100"  />
+            <div class="position-absolute absolute-full sysmtem-data d-flex align-items-center justify-content-center">
+              <div class="py-2 px-1">
+                資訊設備系統<br />解決方案
+              </div>
+            </div>
+          </div>
+          <div v-for="system in systems" :key="system" v-text="system" class="pt-1" />
+        </div>        
+      </div>
+
+      
+      
+      <div class="service-page d-flex justify-content-center mt-2">
+        <div class="px-1 py-2" :class="{'active': serviceIndex===0}" @click.stop="serviceIndex=0" />
+        <div class="px-1 py-2" :class="{'active': serviceIndex===1}" @click.stop="serviceIndex=1" />
+      </div>
+    </div>
+
+    <dtc-title main="NEWS" sub="焦點訊息" :isLeft="false" />
+
+    <div class="news-content mt-2">
+      <div class="item mt-2" v-for="item in news" :key="item.date">
+        <div v-text="item.date" class="date" />
+        <div v-text="item.content" />
+        <hr class="my-1" />
+      </div>
+    </div>
+
+    <b-button variant="outline-primary" class="d-table mx-auto mt-2 mb-3" size="sm" @click.stop="$router.push({ name: 'newsMobile' })">
+      更多消息
+      <b-icon icon="arrow-right-short" />
+    </b-button>
+
+    <dtc-title main="ABOUT US" sub="關於我們" />
+
+    <div class="about-content mt-2">
+      合華科技創立民國七十六年，一直以專業化的資訊服務為經營的方向，專業醫療背景的負責人與開發團隊，擁有優越的整合技術與經驗以及底層DICOM核心技術，可整合各種不同醫療儀器與各家HIS/PACS廠商的系統及有效解決各種疑難與技術問題，提供醫療院更高規的管理與流程改造建議。
+    </div>
+
+    <b-button variant="outline-primary" class="d-table mx-auto mt-2 mb-3" size="sm" @click.stop="$router.push({ name: 'AboutMobile' })">
+      瞭解更多
+      <b-icon icon="arrow-right-short" />
+    </b-button>
+  </div>
+</template>
+
+<script>
+import dtcTitle from "@/components/dtc-title.vue";
+export default {
+  components: {
+    dtcTitle
+  },
+  data () {
+    return {
+      news: [
+        {date: '2020/11/15', content: '台北市兵役局役男體檢數位化系統正式上線測試使用，將為台北市役男提供便捷的手機上線登入服務及與戶政資料連線、體檢醫院檢驗資料自動簽章的功能，除了有效提升役男體位判定的速度外也節省役男整個體檢過程的時間。'},
+        {date: '2020/06/01', content: '台北市立萬芳醫院最新一代的影像檢驗排程及報告系統正式上線，將為病患提供更快速及方便的服務'},
+        {date: '2019/10/06', content: '合華科技榮獲總統盃軟體新創卓越團隊最高獎，空轉後送遠距會診平臺發表記者會，啟用典禮於福華飯店舉辦成功。'}
+      ],
+      serviceIndex: 0,
+      systems: [
+        'HIS-醫院資訊系統','HAS-醫院評鑑系統',
+        'PACS-影像醫學傳輪系統','POC-床邊照護系統',
+        'SRRS-手術記銬報告系','MRIS-病歴掃描倉储系統',
+        'EMR-電子病例管理系統','ADS-血液淨化管理系統',
+        'PES-病理検驗系統','IHE-區域醫療平台',
+        'LIS-懒驗資訊系統','PHR-基層醫療管理',
+        'CTPS-您症管理系統','RIS-放射資訊系統'
+      ],
+      solutions: [
+        '資訊安全系統建置與維護',
+        '軟硬體整合系統建置與維護',
+        '數位監控系統建置與維護',
+        '網路系統建置與維護',
+        '資訊設備軟體硬體採購'
+      ]
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+
+.news-content, .about-content {
+  color: #555;
+  .date {
+    font-size: 0.7rem;
+  }
+}
+
+.about-content {
+  text-indent: 2rem;
+}
+
+.service-image {
+  width: 40vw;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.systems, .solutions {
+  color: #333;
+  font-size: 0.7rem;
+}
+.systems {
+  grid-template-columns: repeat(2, 1fr);
+}
+.solutions ul {
+  list-style-position: inside;
+}
+.service-content {
+  .service-page {
+    color: #000;
+    > div {
+      &:before {
+        content: '';
+        display: table;
+        width:21px;
+        height: 3px;
+        background-color: #999;
+      }
+      &.active {
+        &:before {
+          background-color: var(--primary);
+        }
+      }
+    }
+  }
+}
+
+.sysmtem-data {
+  background-color: rgba(255, 255, 255, .33);
+  > div {
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: rgba(0,0,0,.33);
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+.absolute-full {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+</style>

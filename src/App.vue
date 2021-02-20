@@ -1,5 +1,6 @@
 <template>
   <div id="app" :style="showPrivacy || showTerm ? 'overflow:hidden !important;' : ''">
+    <mobile-header v-if="isMobile" />
     <router-view />
     <footer v-show="!showPrivacy && !showTerm">
       <main>
@@ -30,10 +31,11 @@
 <script>
 import DtcXlNavBar from "@/components/DtcXlNavBar.vue";
 import { mapMutations, mapState } from "vuex";
+import mobileHeader from "@/components/MobileHeader.vue";
 export default {
   name: "Home",
   components: {
-    DtcXlNavBar,
+    DtcXlNavBar, mobileHeader
   },
   data() {
     return {
@@ -54,7 +56,10 @@ export default {
       const userAgentIsMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       const screenIsMobile = document.documentElement.clientWidth < 768;
       this.m_setIsMobile(userAgentIsMobile || screenIsMobile);
-      if (this.$route.name === 'Home' && this.isMobile) this.$router.push({ name: 'HomeMobile' })
+      setTimeout(() => {
+        if (!this.$route.name.includes('Mobile') && this.isMobile) this.$router.replace({ name: this.$route.name + 'Mobile' });
+        else if(this.$route.name.includes('Mobile') && !this.isMobile) this.$router.replace({ name: this.$route.name.replace('Mobile', '') });
+      }, 100);
     }
   },
   watch: {
@@ -158,5 +163,15 @@ footer {
       font-size: 24px;
     }
   }
+}
+
+.sub-title {
+  color: #3D63CB;
+  font-weight:bold;
+}
+
+.google-map {
+  height: 40vh;
+  min-height: 400px;
 }
 </style>

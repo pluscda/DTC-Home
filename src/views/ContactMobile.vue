@@ -5,16 +5,16 @@
       <dtc-title main="CONTACT US" sub="聯絡我們" />
 
       <div class="input-label mt-3">姓名</div>
-      <b-input type="text" class="rounded-lg px-2 py-1" v-model="name" placeholder="請輸入" :plaintext="true" />
+      <b-input type="text" class="rounded-lg px-2 py-1" v-model="name" placeholder="請輸入" />
 
       <div class="input-label mt-1">聯絡電話</div>
-      <b-input type="text" class="rounded-lg px-2 py-1" v-model="phone" placeholder="請輸入" :plaintext="true" />
+      <b-input type="text" class="rounded-lg px-2 py-1" v-model="phone" placeholder="請輸入" />
 
       <div class="input-label mt-1">E-MAIL</div>
-      <b-input type="text" class="rounded-lg px-2 py-1" v-model="email" placeholder="請輸入" :plaintext="true" />
+      <b-input type="text" class="rounded-lg px-2 py-1" v-model="email" placeholder="請輸入" />
 
       <div class="input-label mt-1">內容資訊</div>
-      <b-textarea v-model="content" class="rounded-lg px-2 py-1" placeholder="請輸入" :plaintext="true" />
+      <b-textarea v-model="content" class="rounded-lg px-2 py-1" placeholder="請輸入" />
 
       <div class="submit-frame mt-3">
         <img src="verification.png" class="w-100" />

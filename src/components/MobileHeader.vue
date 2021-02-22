@@ -8,7 +8,7 @@
           <span /><span /><span />
         </template>
       </div>
-      <b-img src="home_image/logo_gray.svg" class="logo" />
+      <b-img @click.stop="$router.push({ name: 'HomeMobile' })" src="home_image/logo_gray.svg" class="logo" />
       <div />
     </div>
 

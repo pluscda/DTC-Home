@@ -6,7 +6,7 @@
 
     <div class="service-content mt-2 mb-4">
 
-      <div v-if="serviceIndex===0" class="item items-ground px-2"  style="background-image: url(homeMobile_image/fix.jpg)">
+      <div v-if="serviceIndex===0" class="item items-ground px-2"  style="background-image: url(homeMobile_image/healthcare.jpg)">
         <div class="px-3">
           <div class="item-title text-center">資訊設備系統解決方案</div>
           <div class="d-grid systems">
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div v-if="serviceIndex===1" class="item items-ground px-2" style="background-image: url(homeMobile_image/healthcare.jpg)">
+      <div v-if="serviceIndex===1" class="item items-ground px-2" style="background-image: url(homeMobile_image/fix.jpg)">
         <div class="px-3">
           <div class="item-title text-center">醫療資訊系統解決方案</div>
           <div class="d-grid systems">
@@ -42,7 +42,7 @@
       <dtc-title main="NEWS" sub="焦點訊息" :isLeft="false" />
 
       <div class="news-content mt-2">
-        <div class="item mt-2" v-for="item in news" :key="item.date">
+        <div class="item mt-2" v-for="item in news.slice(0,3)" :key="item.date">
           <div v-text="item.date" class="date" />
           <div v-text="item.content" />
           <hr class="my-1" />
@@ -70,17 +70,14 @@
 
 <script>
 import dtcTitle from "@/components/dtc-title.vue";
+import news from "@/assets/js/news.js";
 export default {
   components: {
     dtcTitle
   },
   data () {
     return {
-      news: [
-        {date: '2020/11/15', content: '台北市兵役局役男體檢數位化系統正式上線測試使用，將為台北市役男提供便捷的手機上線登入服務及與戶政資料連線、體檢醫院檢驗資料自動簽章的功能，除了有效提升役男體位判定的速度外也節省役男整個體檢過程的時間。'},
-        {date: '2020/06/01', content: '台北市立萬芳醫院最新一代的影像檢驗排程及報告系統正式上線，將為病患提供更快速及方便的服務'},
-        {date: '2019/10/06', content: '合華科技榮獲總統盃軟體新創卓越團隊最高獎，空轉後送遠距會診平臺發表記者會，啟用典禮於福華飯店舉辦成功。'}
-      ],
+      news,
       serviceIndex: 0,
       systems: [
         'HIS-醫院資訊系統','HAS-醫院評鑑系統',

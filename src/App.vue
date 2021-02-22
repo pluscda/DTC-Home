@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :style="showPrivacy || showTerm ? 'overflow:hidden !important;' : ''">
+  <div id="app" :style="showPrivacy || showTerm ? 'overflow:hidden !important; max-height: 100vh;' : ''">
     <mobile-header v-if="isMobile" />
     <router-view />
     <footer v-show="!showPrivacy && !showTerm">
@@ -13,29 +13,39 @@
         <div style="color:white;transform:translate(20px, -7px);font-size:12px;">Copyright©2020 DATACOM. All rights reserved.</div>
       </main>
     </footer>
-    <aside v-if="showPrivacy" class="my-term">
-      <div @click="showPrivacy = false">
+    <aside v-if="showPrivacy" class="my-term" :class="{'mobile-mode': isMobile}">
+      <privacyAndTerms mode="privacy" v-if="isMobile" />
+
+      <div v-else @click="showPrivacy = false">
         <span class="my-close"><i class="fas fa-times-circle"></i></span>
         <img src="privacy.png" />
       </div>
     </aside>
-    <aside v-if="showTerm" class="my-term" @click="showTerm = false">
-      <div @click="showTerm = false">
+    <aside v-if="showTerm" class="my-term" :class="{'mobile-mode': isMobile}">
+      <privacyAndTerms mode="terms" v-if="isMobile" />
+      <div v-else @click="showTerm = false">
         <span class="my-close"><i class="fas fa-times-circle"></i></span>
         <img src="term.png" />
       </div>
     </aside>
+
+
+    <div v-if="showTerm || showPrivacy" class="position-fixed close-button shadow p-1" @click.stop="showPrivacy = showTerm = false;">
+      <i class="fas fa-times-circle" />
+    </div>
+
   </div>
 </template>
 
 <script>
 import DtcXlNavBar from "@/components/DtcXlNavBar.vue";
+import privacyAndTerms from "@/components/privacyAndTerms.vue";
 import { mapMutations, mapState } from "vuex";
 import mobileHeader from "@/components/MobileHeader.vue";
 export default {
   name: "Home",
   components: {
-    DtcXlNavBar, mobileHeader
+    DtcXlNavBar, mobileHeader, privacyAndTerms
   },
   data() {
     return {
@@ -141,9 +151,9 @@ footer {
   bottom: 0;
   right: 0;
   background: rgba(#fff, 0.8);
-  z-index: 9999999999;
+  z-index: 999999;
   > div {
-    z-index: 99999999999;
+    z-index: 9999999;
     background: rgba(#fff, 0.7);
     width: 100vw;
     height: 100vh;
@@ -163,6 +173,11 @@ footer {
       font-size: 24px;
     }
   }
+  &.mobile-mode {
+    > div {
+      display: block;
+    }
+  }
 }
 
 .sub-title {
@@ -173,5 +188,15 @@ footer {
 .google-map {
   height: 40vh;
   min-height: 400px;
+}
+
+.close-button {
+  right: 15px;
+  bottom: 15px;
+  font-size: 1.5rem;
+  line-height: 1;
+  background-color: #961b05;
+  border-radius: 100px;
+  z-index: 1000000;
 }
 </style>

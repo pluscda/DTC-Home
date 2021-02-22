@@ -1,7 +1,7 @@
 <template>
   <div class="reputations">
     <div v-for="item in items" :key="item.title" class="pt-5 reputation mb-2" :style="`background-image: url('homeMobile_image/${item.img}')`">
-      <div v-text="item.title" class="px-5 item-title mb-3" />
+      <div v-text="item.title" class="px-5 item-title mb-3 text-light" />
       <div class="item-list p-2" :class="{'d-grid multiple': item.list.length > 3}">
         <div v-for="(li,idx) in item.list" :key="li" v-text="`${idx+1}. ${li}`" />
       </div>

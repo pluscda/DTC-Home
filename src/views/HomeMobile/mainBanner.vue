@@ -12,7 +12,7 @@
             <div>完整的系統解決方案。</div>
           </h4>
         </div>
-        <b-button size="sm" variant="light" class="shadow mx-auto d-table immediate mt-2">立即洽詢</b-button>
+        <b-button size="sm" variant="light" class="shadow mx-auto d-table immediate mt-2" @click.stop="$router.push({ name: 'contactMobile' })">立即洽詢</b-button>
         <b-icon icon="chevron-double-down" class="mx-auto d-table mt-1" />
       </div>
     </div>

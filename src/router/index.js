@@ -55,13 +55,19 @@ const routes = [
   },
   {
     path: "/productMobile",
-    name: "ProductMobile",
-    component: () => import("../views/ProductMobile.vue"),
-  },
-  {
-    path: "/productMobile/:itemName",
-    name: "ProductItemMobile",
-    component: () => import("../views/ProductItem.vue"),
+    component: () => import("../views/ProductMobile/index.vue"),
+    children: [
+      {
+        path: "",
+        name: "ProductMobile",
+        component: () => import("../views/ProductMobile/productList.vue")
+      },
+      {
+        path: ":itemName",
+        name: "ProductItemMobile",
+        component: () => import("../views/ProductMobile/ProductItem.vue"),
+      }
+    ]
   },
   {
     path: "/success",
@@ -95,12 +101,12 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  // if (!to.name.includes('Mobile') && store.state.isMobile) {
-  //   next({ name: to.name + 'Mobile' });
-  // } else {
-  //   next();
-  // }
-  next();
+  if (!to.name.includes('Mobile') && store.state.isMobile) {
+    next({ name: to.name + 'Mobile' });
+  } else {
+    next();
+  }
+  // next();
 })
 
 export default router;

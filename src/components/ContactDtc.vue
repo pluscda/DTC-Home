@@ -68,7 +68,6 @@ main {
 }
 
 .right {
-  opacity: 0.8;
   cursor: pointer;
   transform: translateY(-25px);
 }

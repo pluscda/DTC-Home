@@ -12,11 +12,12 @@
       <div />
     </div>
 
-
-    <aside class="position-fixed drawer-menu" :style="`top: ${headerHeight}px`" v-if="showDrawer">
-      <b-icon icon="x" font-scale="2" class="cross position-absolute" @click.stop="drawerEvent" />
-      <div v-for="({label, name}) in drawMenu" :key="name" v-text="label" class="mb-2" @click.stop="navigateTo(name)" />
-    </aside>
+    <transition name="fade">
+      <aside class="position-fixed drawer-menu" :style="`top: ${headerHeight}px`" v-if="showDrawer">
+        <b-icon icon="x" font-scale="2" class="cross position-absolute" @click.stop="drawerEvent" />
+        <div v-for="({label, name}) in drawMenu" :key="name" v-text="label" class="mb-2" @click.stop="navigateTo(name)" />
+      </aside>
+    </transition>
 
     <div class="position-fixed scroll-button shadow p-1" @click.stop="scrollToTop" variant="primary" pill>
       <b-img src="homeMobile_image/arrowDown2.svg" />
@@ -64,6 +65,14 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .25s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 .mobile-header {
   font-family: "Microsoft Jhenghei";
   .cross {

@@ -1,14 +1,22 @@
 <template>
   <div class="product-item p-3">
-    <b-button variant="outline-primary" size="sm" @click.stop="$router.go(-1)">
-      <b-icon icon="chevron-left" variant="primary" />
-      產品介紹
-    </b-button>
+    <div class="d-flex justify-content-start mb-3">
+      <b-button variant="outline-primary" size="sm" @click.stop="$router.replace({ name: 'ProductMobile' })">
+        <b-icon icon="chevron-left" variant="primary" />
+        產品介紹
+      </b-button>
+      <!-- <b-button variant="outline-primary" class="ml-1" size="sm" @click.stop="$router.go(-1)">
+        <b-icon icon="chevron-left" variant="primary" />
+        上一頁
+      </b-button> -->
+    </div>
 
     <div class="pacs-items" v-if="pacsItems.length > 0">
       <div>PACS型號選單</div>
       <div class="d-flex flex-wrap">
-        <div v-for="pacs in pacsItems" :key="pacs.key" class="pacs-btn p-2" v-text="pacs.title" @click.stop="$router.replace({ path: `/productMobile/${pacs.key}` })" />
+        <div v-for="pacs in pacsItems" :key="pacs.key" class="pacs-btn p-2" @click.stop="routerToItem(pacs)">
+          {{ pacs.key }}
+        </div>
       </div>
     </div>
 
@@ -23,7 +31,7 @@
       <div class="steps">
         <div v-for="(step, idx) in item.steps" :key="'step' + idx" class="shadow-sm d-flex align-items-start py-2 bg-white mx-auto" :class="{'mt-4': idx > 0}">
           <div class="step-number mx-2 shadow" v-text="idx + 1" />
-          <div class="flex-grow-1">
+          <div class="step-content">
             <div class="step-title" v-html="step.title" />
             <div class="step-sub" v-html="step.sub" />
           </div>
@@ -47,20 +55,24 @@ export default {
     }
   },
   created () {
-    this.findItem();
+    this.findItem(this.$route.params.itemName);
   },
   methods: {
-    findItem () {
-      // if (!this.$route.params.hasOwnProperty('itemName')) this.$router.replace({ name: 'ProductMobile' });
-      let { itemName } = this.$route.params;
+    findItem (itemName) {
       if (itemName === 'Pictures') itemName = 'DC-100';
-      const _item = this.products.find(({ key }) => key === itemName);
-      
+      this.changeItem(
+        this.products.find(({ key }) => key === itemName)
+      );
+    },
+    changeItem (_item) {
       if(!_item) this.$router.replace({ name: 'ProductMobile' });
       this.item = _item;
     },
     isMatchPacs(str) {
       return str.includes('DC-') || str.includes('DICOM-');
+    },
+    routerToItem (pacs) {
+      this.$router.push({ path: `/productMobile/${pacs.key}` });
     }
   },
   computed: {
@@ -69,6 +81,16 @@ export default {
       return this.isMatchPacs(this.item.title)
         ? this.products.filter(({key}) => this.isMatchPacs(key))
         : [];
+    }
+  },
+  watch: {
+    '$route.params' ({ itemName }) {
+      this.findItem(itemName);
+    }
+  },
+  filters: {
+    pacsName (val) {
+      return val.split(' ')[0];
     }
   }
 }
@@ -93,6 +115,10 @@ export default {
     width: 100%;
     max-width: 300px;
     border-radius: 15px;
+  }
+
+  .step-content {
+    flex: 1 0 0;
   }
 
   .step-number {

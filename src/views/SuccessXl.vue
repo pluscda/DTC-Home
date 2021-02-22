@@ -70,7 +70,7 @@ export default {
 .banner {
   width: 100vw;
   height: 380px;
-  background: url("/client_banner.svg") no-repeat center center;
+  background: url("/client_banner.jpg") no-repeat center center;
   background-size: cover;
   display: grid;
   place-items: center;

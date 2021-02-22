@@ -1,8 +1,8 @@
 <template>
   <section class="dtc-home">
     <span class="one-dot" v-b-visible="visibleHandler"></span>
-    <DtcXlNavBar v-if="normalNavBar"></DtcXlNavBar>
-    <DtcXlNavWhiteBar v-if="!normalNavBar"></DtcXlNavWhiteBar>
+    <!-- <DtcXlNavBar v-if="normalNavBar"></DtcXlNavBar> -->
+    <DtcXlNavWhiteBar />
     <div class="banner-img" ref="myBanner" @click="$router.push('contact')">
       <img src="main_left.png" />
       <!-- <img src="main_right.png" class="dtc-b-2" /> -->

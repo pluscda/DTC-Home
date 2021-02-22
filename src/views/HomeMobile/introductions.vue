@@ -1,39 +1,35 @@
 <template>
-  <div class="p-4">
-
-    <dtc-title main="SERVICE" sub="服務項目" />
+  <div>
+    <div class="p-4">
+      <dtc-title main="SERVICE" sub="服務項目" />
+    </div>
 
     <div class="service-content mt-2 mb-4">
 
-      <div v-if="serviceIndex===0" class="item d-flex align-items-start">
-        <ul class="d-grid solutions flex-grow-1">
-          <li v-for="solution in solutions" :key="solution" v-text="solution" class="pt-1" />
-        </ul>
-        <div class="position-relative pr-1" style="grid-row: span 4; width: 40vw;">
-          <b-img src="homeMobile_image/fix.jpg" class="w-100" style="grid-row: span 4" />
-          <div class="position-absolute absolute-full sysmtem-data d-flex align-items-center justify-content-center">
-              <div class="py-2 px-1">
-                醫療資訊系統<br />解決方案
-              </div>
-            </div>    
+      <div v-if="serviceIndex===0" class="item items-ground px-2"  style="background-image: url(homeMobile_image/fix.jpg)">
+        <div class="px-3">
+          <div class="item-title text-center">資訊設備系統解決方案</div>
+          <div class="d-grid systems">
+            <div v-for="system in systems" :key="system" class="pt-1 d-flex justify-content-start">
+              <div>．</div>
+              <div v-text="system" />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div v-if="serviceIndex===1" class="item d-flex align-items-start">
-        <div class="d-grid systems flex-grow-1">
-          <div class="position-relative pr-1" style="grid-row: span 4">
-            <b-img src="homeMobile_image/healthcare.jpg" class="w-100"  />
-            <div class="position-absolute absolute-full sysmtem-data d-flex align-items-center justify-content-center">
-              <div class="py-2 px-1">
-                資訊設備系統<br />解決方案
-              </div>
+      <div v-if="serviceIndex===1" class="item items-ground px-2" style="background-image: url(homeMobile_image/healthcare.jpg)">
+        <div class="px-3">
+          <div class="item-title text-center">醫療資訊系統解決方案</div>
+          <div class="d-grid systems">
+            
+            <div v-for="solution in solutions" :key="solution" class="pt-1 d-flex justify-content-start">
+              <div>．</div>
+              <div  v-text="solution" />
             </div>
           </div>
-          <div v-for="system in systems" :key="system" v-text="system" class="pt-1" />
-        </div>        
+        </div>
       </div>
-
-      
       
       <div class="service-page d-flex justify-content-center mt-2">
         <div class="px-1 py-2" :class="{'active': serviceIndex===0}" @click.stop="serviceIndex=0" />
@@ -41,31 +37,34 @@
       </div>
     </div>
 
-    <dtc-title main="NEWS" sub="焦點訊息" :isLeft="false" />
+    <div class="p-4">
 
-    <div class="news-content mt-2">
-      <div class="item mt-2" v-for="item in news" :key="item.date">
-        <div v-text="item.date" class="date" />
-        <div v-text="item.content" />
-        <hr class="my-1" />
+      <dtc-title main="NEWS" sub="焦點訊息" :isLeft="false" />
+
+      <div class="news-content mt-2">
+        <div class="item mt-2" v-for="item in news" :key="item.date">
+          <div v-text="item.date" class="date" />
+          <div v-text="item.content" />
+          <hr class="my-1" />
+        </div>
       </div>
+
+      <b-button variant="outline-primary" class="d-table mx-auto mt-2 mb-3" size="sm" @click.stop="$router.push({ name: 'newsMobile' })">
+        更多消息
+        <b-icon icon="arrow-right-short" />
+      </b-button>
+
+      <dtc-title main="ABOUT US" sub="關於我們" />
+
+      <div class="about-content mt-2">
+        合華科技創立民國七十六年，一直以專業化的資訊服務為經營的方向，專業醫療背景的負責人與開發團隊，擁有優越的整合技術與經驗以及底層DICOM核心技術，可整合各種不同醫療儀器與各家HIS/PACS廠商的系統及有效解決各種疑難與技術問題，提供醫療院更高規的管理與流程改造建議。
+      </div>
+
+      <b-button variant="outline-primary" class="d-table mx-auto mt-2 mb-3" size="sm" @click.stop="$router.push({ name: 'AboutMobile' })">
+        瞭解更多
+        <b-icon icon="arrow-right-short" />
+      </b-button>
     </div>
-
-    <b-button variant="outline-primary" class="d-table mx-auto mt-2 mb-3" size="sm" @click.stop="$router.push({ name: 'newsMobile' })">
-      更多消息
-      <b-icon icon="arrow-right-short" />
-    </b-button>
-
-    <dtc-title main="ABOUT US" sub="關於我們" />
-
-    <div class="about-content mt-2">
-      合華科技創立民國七十六年，一直以專業化的資訊服務為經營的方向，專業醫療背景的負責人與開發團隊，擁有優越的整合技術與經驗以及底層DICOM核心技術，可整合各種不同醫療儀器與各家HIS/PACS廠商的系統及有效解決各種疑難與技術問題，提供醫療院更高規的管理與流程改造建議。
-    </div>
-
-    <b-button variant="outline-primary" class="d-table mx-auto mt-2 mb-3" size="sm" @click.stop="$router.push({ name: 'AboutMobile' })">
-      瞭解更多
-      <b-icon icon="arrow-right-short" />
-    </b-button>
   </div>
 </template>
 
@@ -105,6 +104,13 @@ export default {
 </script>
 
 <style lang="scss">
+.items-ground {
+  background: transparent no-repeat center center / cover;
+  > div {
+    min-height: 210px;
+    background-color: rgba(255, 255, 255, .9);
+  }
+}
 
 .news-content, .about-content {
   color: #555;
@@ -132,6 +138,14 @@ export default {
 .systems {
   grid-template-columns: repeat(2, 1fr);
 }
+
+.item-title {
+  color: #000;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 2;
+}
+
 .solutions ul {
   list-style-position: inside;
 }

@@ -10,6 +10,13 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+    beforeEnter (to, from, next) {
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        next({ name: 'HomeMobile' });
+      } else {
+        next();
+      }
+    }
   },
   {
     path: "/home",

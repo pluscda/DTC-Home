@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="p-4">
-      <dtc-title main="SERVICE" sub="服務項目" />
+      <dtc-title main="SERVICE ITEMS" sub="服務項目" />
     </div>
 
     <div class="service-content mt-2 mb-4">
@@ -86,7 +86,7 @@ export default {
         'EMR-電子病例管理系統','ADS-血液淨化管理系統',
         'PES-病理検驗系統','IHE-區域醫療平台',
         'LIS-懒驗資訊系統','PHR-基層醫療管理',
-        'CTPS-您症管理系統','RIS-放射資訊系統'
+        'CTPS-癌症管理系統','RIS-放射資訊系統'
       ],
       solutions: [
         '資訊安全系統建置與維護',

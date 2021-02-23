@@ -4,7 +4,7 @@
     <div class="banner">
       <img src="contact_title.png" width="140" />
       <form>
-        <div class="grid-2">
+        <!-- <div class="grid-2">
           <div class="line-1">姓名</div>
           <div class="line-1">聯絡電話</div>
           <input placeholder="請輸入" />
@@ -17,7 +17,7 @@
             <img src="verification.png" />
           </div>
           <div>送 出</div>
-        </div>
+        </div> -->
         <div>
           <img src="contact_text.png" />
         </div>
@@ -80,7 +80,7 @@ export default {
   }
   form {
     position: absolute;
-    width: 838px;
+    width: 438px; // 838px
     height: 450px;
     left: 50%;
     transform: translateX(-50%);

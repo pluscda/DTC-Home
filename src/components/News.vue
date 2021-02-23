@@ -1,22 +1,52 @@
 <template>
-  <section style="margin-top:-100px;">
-    <img src="index_news_new.png" style="cursor:pointer;" @click="$router.push('news')" />
+  <section class="news-frame" style="margin-top:-100px;">
+    <img src="index_news_title.png" class="ml-auto" style="cursor:pointer;" @click="$router.push('news')" />
+    <div class="news-content mt-4" :style="`grid-template-columns: repeat( ${newsNumber}, 1fr)`" >
+      <div class="item px-2" v-for="item in newsItems" :key="item.date">
+        <div v-text="item.date" class="date mb-3" />
+        <div v-text="item.content" />
+      </div>
+    </div>
+
+
   </section>
 </template>
 
 <script>
-const names = ['首頁', '關於合華', '焦點訊息', '產品介紹', '成功案例', '報修系統', '人力招募', '聯絡我們'];
+import news from "@/assets/js/news.js";
 export default {
 	data() {
 		return {
-			names,
+			news,
+      newsNumber: 3
 		};
 	},
+  computed: {
+    newsItems () {
+      return (this.news.slice(0, this.newsNumber)).reverse();
+    }
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.news-frame {
+  max-width: 1230px;
+  margin: 0 auto;
+}
+.news-content {
+  
+  display: grid;
+  background-color: #555;
+  grid-gap: 1px;
+  > div {
+    background-color: #f7f7f7;
+    color: #555;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+}
 section {
   width: 100vw;
   display: grid;

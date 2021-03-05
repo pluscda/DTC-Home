@@ -1,7 +1,7 @@
 <template>
   <div class="contact">
     <dtc-banner title="聯絡我們" path="首頁/聯絡我們" image="ContactMobile_image/contact_banner.jpg" />
-    <div class="p-4">
+    <!-- <div class="p-4">
       <dtc-title main="CONTACT US" sub="聯絡我們" />
 
       <div class="input-label mt-3">姓名</div>
@@ -17,13 +17,12 @@
       <b-textarea v-model="content" class="rounded-lg px-2 py-1" placeholder="請輸入" />
 
       <div class="submit-frame mt-3">
-        <!-- <img src="verification.png" class="w-100" /> -->
         <div class="d-flex justify-content-center">
           <vue-recaptcha sitekey="6LfljHIaAAAAALisrQ7UOUlEY7eQj5zCy0wHGLLi" :loadRecaptchaScript="true" @verify="onVerify" @expired="onExpired" />
         </div>
         <b-button class="mt-2" variant="primary" @click.stop="submit" block>送出</b-button>
       </div> 
-    </div>
+    </div> -->
 
     <div class="contact-area px-2 py-4">
       <dtc-title class="ml-3 mb-4" main="CONTACT US" sub="聯絡我們" />

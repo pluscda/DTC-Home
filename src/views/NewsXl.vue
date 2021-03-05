@@ -57,7 +57,7 @@ export default {
     };
   },
   created () {
-    this.fetchNewsData();
+    // this.fetchNewsData();
   },
   components:{
     DtcXlNavWhiteBar

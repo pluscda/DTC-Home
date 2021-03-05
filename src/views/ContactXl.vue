@@ -4,7 +4,7 @@
     <div class="banner">
       <img src="contact_title.png" width="140" />
       <form>
-        <div class="grid-2">
+        <!-- <div class="grid-2">
           <div class="line-1">姓名</div>
           <div class="line-1">聯絡電話</div>
           <input v-model="name" placeholder="請輸入" />
@@ -15,10 +15,10 @@
           <textarea v-model="content" placeholder="請輸入" style="grid-column:1/-1" spellcheck="false" class="line-3"></textarea>
           <div>
             <vue-recaptcha sitekey="6LfljHIaAAAAALisrQ7UOUlEY7eQj5zCy0wHGLLi" :loadRecaptchaScript="true" @verify="onVerify" @expired="onExpired" />
-            <!-- <img src="verification.png" /> -->
+           
           </div>
           <div @click.stop="submit">送 出</div>
-        </div>
+        </div> -->
         <div>
           <img src="contact_text.png" />
         </div>
@@ -133,7 +133,7 @@ export default {
   }
   form {
     position: absolute;
-    width: 908; // 838px
+    width: 338; // 908px
     height: 480px;
     left: 50%;
     transform: translateX(-50%);

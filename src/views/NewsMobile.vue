@@ -44,7 +44,7 @@ export default {
     };
   },
   created () {
-    this.fetchNewsData();
+    // this.fetchNewsData();
   },
   computed: {
     newsGroup () {

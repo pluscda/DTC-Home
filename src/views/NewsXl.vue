@@ -11,8 +11,8 @@
           {{ year }}<font>年</font>
         </div>
         <div class="list pt-2 pl-2" :key="year + 'list'" :class="{'mb-5': idx < Object.keys(newsGroup).length - 1}">
-          <div v-for="item in items" :key="item.date" class="mb-3">
-            <div class="item-date" v-text="item.date" />
+          <div v-for="item in items" :key="pagination.page + item.createDate" class="mb-3">
+            <div class="item-date" v-text="item.createDate" />
             <div class="item-content" v-text="item.content" />
           </div>
         </div>
@@ -42,15 +42,22 @@
 <script>
 import DtcXlNavWhiteBar from '@/components/DtcXlNavWhiteBar.vue';
 import news from "@/assets/js/news.js";
+import { getNews } from "@/service/api.js";
 export default {
   data() {
     return {
       news,
+      total: 0,
+      netNews: [],
+      useNetWork: false,
       pagination: {
         page: 1,
         per: 16
       }
     };
+  },
+  created () {
+    this.fetchNewsData();
   },
   components:{
     DtcXlNavWhiteBar
@@ -58,8 +65,11 @@ export default {
   computed: {
     newsGroup () {
       const { page, per } = this.pagination;
-      return this.news.slice((page - 1) * per, page * per).reduce((acc, cur) => {
-        const _year = cur.date.substr(0, 4);
+      const _news = !this.useNetWork
+        ? this.news.slice((page - 1) * per, page * per)
+        : this.netNews;
+      return _news.reduce((acc, cur) => {
+        const _year = cur.createDate.substr(0, 4);
         if (acc.hasOwnProperty(_year)) {
           acc[_year].push(cur)
         } else {
@@ -71,11 +81,28 @@ export default {
   },
   watch:{
     "pagination.page" () {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
+      this.fetchNewsData(() => {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
       });
+    }
+  },
+  methods: {
+    fetchNewsData (callback) {
+      const { per, page } = this.pagination;
+      getNews(per, page).then(({ data }) => {
+        const { count, items } = data
+        this.total = count
+        this.netNews = items
+        this.useNetWork = true
+        if (callback) callback();
+      }).catch(() => {
+        this.useNetWork = false
+        if (callback) callback();
+      })
     }
   }
 };

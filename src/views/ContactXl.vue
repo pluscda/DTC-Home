@@ -4,20 +4,21 @@
     <div class="banner">
       <img src="contact_title.png" width="140" />
       <form>
-        <!-- <div class="grid-2">
+        <div class="grid-2">
           <div class="line-1">姓名</div>
           <div class="line-1">聯絡電話</div>
-          <input placeholder="請輸入" />
-          <input placeholder="請輸入" />
+          <input v-model="name" placeholder="請輸入" />
+          <input v-model="phone" placeholder="請輸入" />
           <div style="grid-column:1/-1">Ｅ-MAIL</div>
-          <input type="email" placeholder="請輸入" style="grid-column:1/-1" class="line-2" />
+          <input  v-model="email" type="email" placeholder="請輸入" style="grid-column:1/-1" class="line-2" />
           <div style="grid-column:1/-1">內容資訊</div>
-          <textarea placeholder="請輸入" style="grid-column:1/-1" spellcheck="false" class="line-3"></textarea>
+          <textarea v-model="content" placeholder="請輸入" style="grid-column:1/-1" spellcheck="false" class="line-3"></textarea>
           <div>
-            <img src="verification.png" />
+            <vue-recaptcha sitekey="6LfljHIaAAAAALisrQ7UOUlEY7eQj5zCy0wHGLLi" :loadRecaptchaScript="true" @verify="onVerify" @expired="onExpired" />
+            <!-- <img src="verification.png" /> -->
           </div>
-          <div>送 出</div>
-        </div> -->
+          <div @click.stop="submit">送 出</div>
+        </div>
         <div>
           <img src="contact_text.png" />
         </div>
@@ -34,20 +35,72 @@
       </footer>
     </div>
     <!-- <img src="mapc.png" class="dtc-body" /> -->
+    <b-modal :centered="true" :title="modalData.title" :hide-footer="true" v-model="modalData.show">{{ modalData.message }}</b-modal>
   </section>
 </template>
 
 <script>
 import DtcXlNavWhiteBar from '@/components/DtcXlNavWhiteBar.vue';
-
+import VueRecaptcha from 'vue-recaptcha';
+import { addContact } from "@/service/api.js";
 export default {
   data() {
     return {
-      
+      name: '',
+      phone: '',
+      email: '',
+      content: '',
+      isNotRobot: false,
+      modalData: {
+        show: false,
+        title: '',
+        message: ''
+      }
     };
   },
   components:{
-    DtcXlNavWhiteBar
+    DtcXlNavWhiteBar, VueRecaptcha
+  },
+  methods: {
+    onVerify () {
+      this.isNotRobot = true;
+    },
+    onExpired () {
+
+    },
+    submit() {
+      if (!this.isNotRobot) {
+        this.modalData.title = '錯誤';
+        this.modalData.message = '請通過我不是機器人驗證';
+        this.modalData.show = true;
+        return;
+      }
+
+      addContact({
+        name: this.name,
+        phone: this.phone,
+        email: this.email,
+        content: this.content
+      }).then(() => {
+        this.modalData.title = '新增成功';
+        this.modalData.message = '謝謝您的留言，我們會進快連絡您';
+        this.modalData.show = true;
+        ['name', 'phone', 'email', 'content'].forEach(k => this[k] = '');
+
+      }).catch(err => {
+        this.modalData.title = '新增失敗';
+        this.modalData.message = '請稍候再試，或直接電話連絡我們 (02)2225-0891';
+        this.modalData.show = true;
+      })
+    }
+  },
+  watch: {
+    "modalData.show" (value) {
+      if (!value) {
+        this.modalData.title = '';
+        this.modalData.message = '';
+      }
+    }
   }
 };
 </script>
@@ -80,8 +133,8 @@ export default {
   }
   form {
     position: absolute;
-    width: 438px; // 838px
-    height: 450px;
+    width: 908; // 838px
+    height: 480px;
     left: 50%;
     transform: translateX(-50%);
     top: 300px;

@@ -70,12 +70,17 @@ export default {
   },
   watch:{
     "pagination.page" () {
-      this.fetchNewsData(() => {
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth'
-        });
+      // this.fetchNewsData(() => {
+      //   window.scrollTo({
+      //     top: 0,
+      //     left: 0,
+      //     behavior: 'smooth'
+      //   });
+      // });
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
       });
     }
   },
